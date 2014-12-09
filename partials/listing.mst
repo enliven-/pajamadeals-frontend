@@ -1,0 +1,20 @@
+<div class="card">
+  <div class="row">
+    <div class="card-image col s2">
+      <img src="assets/images/book1.jpg">
+    </div>
+    <div class="card-content col s10">
+      <span class="title">{{ title }}</span>
+      <span class="vol">{{ vol }}</span>
+      <span class="authors">{{ authors }}</span>
+      <span class="publication">{{ publication }}</span>
+      <span class="condition">{{ condition }}</span>
+      <span class="markings">{{ markings }}</span>
+      <span class="mrp">{{ mrp }}</span>
+      <span class="price">{{ price }}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s3 offset-s8"><a class="waves-effect waves-light btn white-text buy">Buy</a></div>
+  </div>
+</div>

@@ -1,0 +1,135 @@
+
+
+<div class="col s12">
+
+  <div id="input" class="section scrollspy">
+    <div class="row">
+      <div class="col s12">
+        <!-- <h5>New Listing</h5> -->
+        <!-- <p>Text fields allow user input. The border should light up simply and clearly indicating which field the user is currently editing.</p> -->
+      </div>
+    </div>
+    <div class="row">
+      <form class="col s12 listing">
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="title" type="text" autocomplete="off" _required>
+            <label for="title">Title</label>
+          </div>
+        </div>
+        <div class="hide hidden">
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="authors" disabled="" type="text" _required>
+            <label for="authors">Authors</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="publication"  disabled=""  type="text" _required>
+            <label for="publication">Publicaiton</label>
+          </div>
+        </div>
+        <div class="row">
+          <p class="grey-text">Condition</p>  
+          <div class="input-field col s4">
+            <input name="group1" type="radio" id="test1"/>
+            <label for="test1">Like New</label>
+          </div>
+          <div class="input-field col s3">
+            <input name="group1" type="radio" id="test2"/>
+            <label for="test2">Fair</label>
+          </div>
+          <div class="input-field col s4">
+            <input name="group1" type="radio" id="test3"/>
+            <label for="test3">Heavily Used</label>    
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <p class="grey-text">Markings</p>  
+          <div class="input-field col s4">
+            <input name="group2" type="radio" id="test4"/>
+            <label for="test4">None</label>
+          </div>
+          <div class="input-field col s3">
+            <input name="group2" type="radio" id="test5"/>
+            <label for="test5">Few</label>
+          </div>
+          <div class="input-field col s4">
+            <input name="group2" type="radio" id="test6"/>
+            <label for="test6">Heavy</label>  
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="mrp" type="text" _required>
+            <label for="mrp">MRP</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="price" type="text" _required>
+            <label for="price">Price</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="sug-price"  disabled="" type="text" _required>
+            <label for="sug-price">Suggested Price</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea id="description"></textarea>                
+            <label for="description">Description</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <button class="btn waves-effect waves-light red lighten-2" name="cancel">Cancel
+              <i class="mdi-navigation-close right"></i>
+            </button>
+          </div>
+          <div class="input-field col s6">
+            <button class="btn waves-effect waves-light create" type="submit" name="action">Create
+              <i class="mdi-navigation-check right"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  $("#title").autocomplete({
+    source      : '/api/books.json',
+    minLength   : 4,
+    messages    : {
+                    noResults   : '',
+                    results     : function() {}
+                  },
+    select      : function( event, ui ) {
+                    populateAndShowForm(ui.item);
+                    $('#title').val(book.title);
+                  }
+  });
+
+
+  var populateAndShowForm = function(book) {
+    $('#title').val(book.title);
+    $('#authors').val(book.authors);
+    $('#publication').val(book.publication);
+    $('#mrp').val(book.mrp);
+    $('#sug-price').val(300);
+
+
+    $('form input[type=text] + label').addClass('active');
+    $('form .hide.hidden').removeClass('hidden');
+  };
+
+  $('button.create').on('click', function(e){
+    e.preventDefault();
+    console.log('create-')
+  });
+</script>

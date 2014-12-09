@@ -1,0 +1,134 @@
+<html>
+<head>
+  <link type="text/css" rel="stylesheet" href="assets/materialize/css/materialize.min.css"  media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="assets/css/default.min.css"  media="screen,projection"/>
+<style>
+  #index-banner {
+    background-color: #ee6e73;
+  }
+  .hidden {
+    display: none;
+  }
+  .card-image {
+    padding: 10px 5px 10px 5px;
+  }
+  input, textarea {
+    max-width:100%
+  }
+  input#department:focus {
+    border-bottom : 1px solid #bdbdbd;
+    box-shadow: none;
+  }
+  input#department + label {
+    position: relative;
+    top: -3.2rem;
+  }
+  input#department + label.active {
+    display: none;
+  }
+  .go {
+    background-color: #f3989b !important;
+  }
+</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+</head>
+
+<body>
+<div class="section no-pad-bot" id="index-banner">
+  <div class="container">
+    <div class="row center">
+      <h2 class="header center-on-small-only">pajamadeals</h2>
+    </div>
+    <div class="row center">
+      <h5 class="header col s12 light center">buy and sell used textbooks on campus!</h5>
+    </div>
+
+    <div class="row center">
+      <div id="select-college" class="section scrollspy s12">
+
+        <div class="row">
+          <div class="input-field col s12">
+            <select class="grey-text darken-3">
+              <option value="" disabled selected>Select your College</option>
+              <option value="1">Vishwakarma Institute of Technology</option>
+              <option value="2">Cummins College of Engineering</option>
+              <option value="3">Maharashtra Institute of Technology</option>
+            </select>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="row center">
+      <div id="select-department" class="section scrollspy">
+
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="department" type="text" required>
+            <label for="department" class="grey-text darken-3">Department</label>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <div class="row center">
+      <a href="/home.html" class="btn-large waves-effect waves-light go">Get Started</a>
+    </div>
+
+    <br>
+  </div>
+
+<!--   <div class="github-commit">
+    <div class="container">
+
+    </div>
+  </div> -->
+
+</div>  
+
+
+
+
+<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/underscore.min.js"></script>
+<script type="text/javascript" src="assets/js/mustache.min.js"></script>
+<script type="text/javascript" src="assets/js/backbone.min.js"></script>
+<script type="text/javascript" src="assets/js/helpers.js"></script>
+<script type="text/javascript" src="assets/materialize/js/materialize.min.js"></script>
+
+<script type="text/javascript" src="app/app.js"></script>
+
+<script type="text/javascript" src="app/models/book.js"></script>
+<script type="text/javascript" src="app/models/listing.js"></script>
+<script type="text/javascript" src="app/models/order.js"></script>
+<script type="text/javascript" src="app/collections/books.js"></script>
+<script type="text/javascript" src="app/collections/listings.js"></script>
+<script type="text/javascript" src="app/collections/orders.js"></script>
+<script type="text/javascript" src="app/views/book.js"></script>
+<script type="text/javascript" src="app/views/books.js"></script>
+<script type="text/javascript" src="app/views/listing.js"></script>
+<script type="text/javascript" src="app/views/order.js"></script>
+<script type="text/javascript" src="app/views/listings.js"></script>
+<script type="text/javascript" src="app/views/orders.js"></script>
+<script type="text/javascript" src="app/routes.js"></script>
+
+
+
+
+<script>
+$(document).ready(function() {
+  $('.button-collapse').sideNav({menuWidth: 240, activationWidth: 70});
+  $('ul.tabs').tabs();
+
+  $('#orders').on('click', function(e) {
+    app.router.trigger('route:orders')
+  });
+});
+</script>
+</body>
+</html>

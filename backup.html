@@ -1,0 +1,257 @@
+<html>
+<head>
+  <link type="text/css" rel="stylesheet" href="assets/materialize/css/materialize.min.css"  media="screen,projection"/>
+  <!-- <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes"> -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+
+</head>
+
+<body>
+
+<nav id="">
+  <div class="container">
+    <div class="nav-wrapper"><a href class="brand-logo">pajamadeals</a>
+      <ul id="nav-mobile" class="right side-nav">
+        <li>
+          <a href>Listings</a>
+        </li>
+        <li>
+          <a href>My Orders</a>
+        </li>
+        <li>
+          <a href>Post Listing</a>
+        </li>
+      </ul><a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+    </div>
+  </div>
+</nav>
+<div class="tabs-wrapper">
+  <div class="row white z-depth-1">
+    <div class="container">
+      <ul class="tabs">
+        <li class="tab"><a id="listings" href="#tab1">Listings</a></li>
+        <li class="tab"><a id="orders"   href="#tab2">Orders</a></li>
+        <li class="tab"><a id="new"      href="#tab3">New</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+
+
+  <div id="tab1" class="col s12">
+    <div class="row">
+      <div class="col s12" id="listings-container">
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <div id="tab2" class="col s12">
+    <div class="row">
+      <div class="col s12" id="orders-container">
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+<div id="tab3" class="col s12">
+
+<div class="col s12">
+
+  <div id="input" class="section scrollspy">
+    <div class="row">
+      <div class="col s12">
+        <h5>New Listing</h5>
+        <p>Text fields allow user input. The border should light up simply and clearly indicating which field the user is currently editing.</p>
+      </div>
+    </div>
+    <div class="row">
+      <form class="col s12 listing">
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="title" type="text" autocomplete="off" required>
+            <label for="title">Title</label>
+          </div>
+        </div>
+        <div class="hide hidden">
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="authors" type="text" required>
+            <label for="authors">Authors</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="publication" type="text" required>
+            <label for="publication">Publicaiton</label>
+          </div>
+        </div>
+        <div class="row">
+          <p class="grey-text">Condition</p>  
+          <div class="input-field col s4">
+            <input name="group1" type="radio" id="test1"/>
+            <label for="test1">Like New</label>
+          </div>
+          <div class="input-field col s3">
+            <input name="group1" type="radio" id="test2"/>
+            <label for="test2">Fair</label>
+          </div>
+          <div class="input-field col s4">
+            <input name="group1" type="radio" id="test3"/>
+            <label for="test3">Heavily Used</label>    
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <p class="grey-text">Markings</p>  
+          <div class="input-field col s4">
+            <input name="group2" type="radio" id="test4"/>
+            <label for="test4">None</label>
+          </div>
+          <div class="input-field col s3">
+            <input name="group2" type="radio" id="test5"/>
+            <label for="test5">Few</label>
+          </div>
+          <div class="input-field col s4">
+            <input name="group2" type="radio" id="test6"/>
+            <label for="test6">Heavy</label>  
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="mrp" type="text" required>
+            <label for="mrp">MRP</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="price" type="text" required>
+            <label for="price">Price</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="sug-price" type="text" required>
+            <label for="sug-price">Suggested Price</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea id="description"></textarea>                
+            <label for="description">Description</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <button class="btn waves-effect waves-light red lighten-2" name="cancel">Cancel
+              <i class="mdi-navigation-close right"></i>
+            </button>
+          </div>
+          <div class="input-field col s6">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+              <i class="mdi-navigation-check right"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/underscore.min.js"></script>
+<script type="text/javascript" src="assets/js/mustache.min.js"></script>
+<script type="text/javascript" src="assets/js/backbone.min.js"></script>
+<script type="text/javascript" src="assets/js/helpers.js"></script>
+<script type="text/javascript" src="assets/materialize/js/materialize.min.js"></script>
+
+<script type="text/javascript" src="app/app.js"></script>
+
+<script type="text/javascript" src="app/models/book.js"></script>
+<script type="text/javascript" src="app/models/listing.js"></script>
+<script type="text/javascript" src="app/models/order.js"></script>
+<script type="text/javascript" src="app/collections/books.js"></script>
+<script type="text/javascript" src="app/collections/listings.js"></script>
+<script type="text/javascript" src="app/collections/orders.js"></script>
+<script type="text/javascript" src="app/views/book.js"></script>
+<script type="text/javascript" src="app/views/books.js"></script>
+<script type="text/javascript" src="app/views/listing.js"></script>
+<script type="text/javascript" src="app/views/order.js"></script>
+<script type="text/javascript" src="app/views/listings.js"></script>
+<script type="text/javascript" src="app/views/orders.js"></script>
+<script type="text/javascript" src="app/routes.js"></script>
+
+
+<style>
+.hidden {
+  /*display: none;*/
+}
+.card-image {
+  padding: 10px 5px 10px 5px;
+}
+input, textarea {
+  max-width:100%
+}
+</style>
+<script>
+$(document).ready(function() {
+  $('.button-collapse').sideNav({menuWidth: 240, activationWidth: 70});
+  $('ul.tabs').tabs();
+
+
+  $('#listings').on('click', function(e) {
+
+  });
+
+  $('#orders').on('click', function(e) {
+    console.log('orders');
+    console.log(app.router);
+    app.router.trigger('route:orders')
+  });
+
+  $('#orders').on('click', function(e) {
+
+  });
+
+});
+</script>
+</body>
+</html>

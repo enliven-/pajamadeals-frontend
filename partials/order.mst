@@ -1,0 +1,13 @@
+
+  <div class="row">
+    <div class="card-image col s2">
+    </div>
+    <div class="card-content col s10">
+      <p class="buyer-id">Buyer-Id:  {{ buyer_id  }}</p>
+      <p class="college-id">College-Id: {{ college_id  }}</p>
+      <p class="status">Status: {{ status }}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s2 offset-s7"><a class="waves-effect waves-light btn white-text cancel">Cancel</a></div>
+  </div>
