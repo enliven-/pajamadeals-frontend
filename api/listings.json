@@ -1,0 +1,1156 @@
+[{
+    "id": 4,
+    "title": "Strength Of Materials",
+    "description": null,
+    "price": "233.75000000000003",
+    "mrp": "565",
+    "authors": "Jain Inderjeet M.",
+    "quality": "like new",
+    "markings": "few markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:29 UTC",
+    "publication": "Techmax Publications",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 1,
+        "name": "Cummins College Of Engg.",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 9,
+    "title": "Computer Organization",
+    "description": null,
+    "price": "219.45000000000002",
+    "mrp": "330",
+    "authors": "A.P.Godse, D.A.Godse",
+    "quality": "like new",
+    "markings": "no markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:29 UTC",
+    "publication": "Technial Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 1,
+        "name": "Cummins College Of Engg.",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 11,
+    "title": "Control Systems",
+    "description": null,
+    "price": "181.50000000000003",
+    "mrp": "495",
+    "authors": "U.A.Bakshi,V.U.Bakshi",
+    "quality": "fair",
+    "markings": "few markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:29 UTC",
+    "publication": "Technical Publications",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 1,
+        "name": "Cummins College Of Engg.",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 16,
+    "title": "Engineering Materials:Properties And Selection",
+    "description": null,
+    "price": "228.25000000000003",
+    "mrp": "650",
+    "authors": "K.G.Budinski",
+    "quality": "fair",
+    "markings": "no markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:29 UTC",
+    "publication": "Prentice Hall India",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 1,
+        "name": "Cummins College Of Engg.",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 23,
+    "title": "Computer Graphics And Gaming",
+    "description": null,
+    "price": "327.25",
+    "mrp": "495",
+    "authors": "Pawale Sanjesh",
+    "quality": "like new",
+    "markings": "no markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:29 UTC",
+    "publication": "Tech Max Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 1,
+        "name": "Cummins College Of Engg.",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 28,
+    "title": "Computer Organization",
+    "description": null,
+    "price": "219.45000000000002",
+    "mrp": "330",
+    "authors": "A.P.Godse, D.A.Godse",
+    "quality": "fair",
+    "markings": "no markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:30 UTC",
+    "publication": "Technial Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 1,
+        "name": "Cummins College Of Engg.",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 30,
+    "title": "Computer Graphics And Gaming",
+    "description": null,
+    "price": "327.25",
+    "mrp": "495",
+    "authors": "Pawale Sanjesh",
+    "quality": "heavily used",
+    "markings": "few markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:30 UTC",
+    "publication": "Tech Max Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 1,
+        "name": "Cummins College Of Engg.",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 35,
+    "title": "Engineering Materials:Properties And Selection",
+    "description": null,
+    "price": "228.25000000000003",
+    "mrp": "650",
+    "authors": "K.G.Budinski",
+    "quality": "fair",
+    "markings": "few markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:30 UTC",
+    "publication": "Prentice Hall India",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 2,
+        "name": "Mit Pune",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 42,
+    "title": "Engineering Graphics  Ii",
+    "description": null,
+    "price": "349.25",
+    "mrp": "135",
+    "authors": "Arunoday Kumar",
+    "quality": "fair",
+    "markings": "few markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:30 UTC",
+    "publication": "Tech Max Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 4,
+        "name": "Mit,Pune",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 47,
+    "title": "Engineering Mathematics  I",
+    "description": null,
+    "price": "143.0",
+    "mrp": "500",
+    "authors": "Dr Mujumdar And Dr M.Y Gokhale",
+    "quality": "fair",
+    "markings": "few markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:30 UTC",
+    "publication": "Nirali Prakashan",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 6,
+        "name": "Smt Kashibai Navale Coe (Sinhgad)",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 54,
+    "title": "Engineering Physics",
+    "description": null,
+    "price": "184.25000000000003",
+    "mrp": "410",
+    "authors": "K.C.Nandi/S.N.Shukla",
+    "quality": "like new",
+    "markings": "no markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:30 UTC",
+    "publication": "Tech Max Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 5,
+        "name": "Mit, Pune",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 59,
+    "title": "Strength Of Materials",
+    "description": null,
+    "price": "233.75000000000003",
+    "mrp": "565",
+    "authors": "Jain Inderjeet M.",
+    "quality": "like new",
+    "markings": "no markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:30 UTC",
+    "publication": "Techmax Publications",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 1,
+        "name": "Cummins College Of Engg.",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 61,
+    "title": "Electronics And Electrical Engineering",
+    "description": null,
+    "price": "310.75",
+    "mrp": "495",
+    "authors": "Katre J.S.",
+    "quality": "like new",
+    "markings": "no markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:30 UTC",
+    "publication": "Techmax Publications",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 1,
+        "name": "Cummins College Of Engg.",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 66,
+    "title": "System Programming And Operating System",
+    "description": null,
+    "price": "272.25",
+    "mrp": "395",
+    "authors": "Sultania Dilip Kumar",
+    "quality": "like new",
+    "markings": "no markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:31 UTC",
+    "publication": "Tech Max Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 1,
+        "name": "Cummins College Of Engg.",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 73,
+    "title": "Engineering Materials:Properties And Selection",
+    "description": null,
+    "price": "200.75000000000003",
+    "mrp": "650",
+    "authors": "K.G.Budinski",
+    "quality": "like new",
+    "markings": "no markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:31 UTC",
+    "publication": "Prentice Hall India",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 8,
+        "name": "Pvg,College Of Engg.",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 78,
+    "title": "Control Systems",
+    "description": null,
+    "price": "55.00000000000001",
+    "mrp": "495",
+    "authors": "U.A.Bakshi,V.U.Bakshi",
+    "quality": "heavily used",
+    "markings": "no markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:31 UTC",
+    "publication": "Technical Publications",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 1,
+        "name": "Cummins College Of Engg.",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 80,
+    "title": "Basic Electronics Engg",
+    "description": null,
+    "price": "170.5",
+    "mrp": "280",
+    "authors": "A.P Godse, U.A Bakshi",
+    "quality": "like new",
+    "markings": "no markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:31 UTC",
+    "publication": "Technical Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 1,
+        "name": "Cummins College Of Engg.",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 85,
+    "title": "Digital Communication",
+    "description": null,
+    "price": "275.0",
+    "mrp": "395",
+    "authors": "J.S.Katre",
+    "quality": "like new",
+    "markings": "no markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:31 UTC",
+    "publication": "Tech Max Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 1,
+        "name": "Cummins College Of Engg.",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 92,
+    "title": "Analog Communication",
+    "description": null,
+    "price": "233.75000000000003",
+    "mrp": "495",
+    "authors": "J.S.Katre",
+    "quality": "like new",
+    "markings": "no markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:31 UTC",
+    "publication": "Tech Max Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 1,
+        "name": "Cummins College Of Engg.",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 97,
+    "title": "Analog Communication",
+    "description": null,
+    "price": "255.75000000000003",
+    "mrp": "495",
+    "authors": "J.S.Katre",
+    "quality": "like new",
+    "markings": "no markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:31 UTC",
+    "publication": "Tech Max Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 7,
+        "name": "Cummins College Of Engg",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 100,
+    "title": "Computer Organization",
+    "description": null,
+    "price": "272.25",
+    "mrp": "425",
+    "authors": "Sultania Dilip Kumar",
+    "quality": "like new",
+    "markings": "no markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:31 UTC",
+    "publication": "Tech Max Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 7,
+        "name": "Cummins College Of Engg",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 105,
+    "title": "Network Theory",
+    "description": null,
+    "price": "266.75",
+    "mrp": "505",
+    "authors": "U.A.Bakshi  A.V.Bakshi",
+    "quality": "like new",
+    "markings": "no markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:31 UTC",
+    "publication": "Technical Publications",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 7,
+        "name": "Cummins College Of Engg",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 112,
+    "title": "Control Systems",
+    "description": null,
+    "price": "159.5",
+    "mrp": "495",
+    "authors": "U.A.Bakshi,V.U.Bakshi",
+    "quality": "like new",
+    "markings": "no markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:32 UTC",
+    "publication": "Technical Publications",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 7,
+        "name": "Cummins College Of Engg",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 117,
+    "title": "Control Systems",
+    "description": null,
+    "price": "233.75000000000003",
+    "mrp": "595",
+    "authors": "Theckedath Dhananjay",
+    "quality": "like new",
+    "markings": "no markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:32 UTC",
+    "publication": "Tech Max Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 7,
+        "name": "Cummins College Of Engg",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 124,
+    "title": "Analog Communication",
+    "description": null,
+    "price": "255.75000000000003",
+    "mrp": "495",
+    "authors": "J.S.Katre",
+    "quality": "like new",
+    "markings": "few markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:32 UTC",
+    "publication": "Tech Max Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 7,
+        "name": "Cummins College Of Engg",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 129,
+    "title": "Engineering Graphics  I",
+    "description": null,
+    "price": "203.50000000000003",
+    "mrp": "485",
+    "authors": "Arunoday Kumar",
+    "quality": "fair",
+    "markings": "few markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:32 UTC",
+    "publication": "Tech Max Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 9,
+        "name": "Mit College Of Engg",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 131,
+    "title": "Basic Electrical Engg",
+    "description": null,
+    "price": "154.0",
+    "mrp": "370",
+    "authors": "U.A Bakshi, V.U. Bakshi",
+    "quality": "fair",
+    "markings": "few markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:32 UTC",
+    "publication": "Technical Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 9,
+        "name": "Mit College Of Engg",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 136,
+    "title": "Foundations Of Computer Network",
+    "description": null,
+    "price": "310.75",
+    "mrp": "255",
+    "authors": "V.S.Bagad,I.A.Dhotre",
+    "quality": "like new",
+    "markings": "few markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:32 UTC",
+    "publication": "Technical Publications",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 7,
+        "name": "Cummins College Of Engg",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 143,
+    "title": "Machine Design",
+    "description": null,
+    "price": "275.0",
+    "mrp": null,
+    "authors": "R.S Kurmi \u0026 J. K Gupta",
+    "quality": "fair",
+    "markings": "few markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:32 UTC",
+    "publication": "S Chand Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 2,
+        "name": "Mit Pune",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 148,
+    "title": "Control Systems",
+    "description": null,
+    "price": "159.5",
+    "mrp": "595",
+    "authors": "Theckedath Dhananjay",
+    "quality": "fair",
+    "markings": "no markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:32 UTC",
+    "publication": "Tech Max Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 7,
+        "name": "Cummins College Of Engg",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 150,
+    "title": "Electronic Device Circuit 1",
+    "description": null,
+    "price": "110.00000000000001",
+    "mrp": "319",
+    "authors": "U.A.Bakshi A.P.Godse",
+    "quality": "fair",
+    "markings": "few markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:32 UTC",
+    "publication": "Technical Publications",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 7,
+        "name": "Cummins College Of Engg",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 155,
+    "title": "Basic Mechanical Engineering",
+    "description": null,
+    "price": "145.75",
+    "mrp": "275",
+    "authors": "Anup Goel, Shinde, Karad",
+    "quality": "like new",
+    "markings": "few markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:32 UTC",
+    "publication": "Technical Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 7,
+        "name": "Cummins College Of Engg",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 162,
+    "title": "Engineering Physics",
+    "description": null,
+    "price": "162.25",
+    "mrp": "410",
+    "authors": "K.C.Nandi/S.N.Shukla",
+    "quality": "like new",
+    "markings": "no markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:32 UTC",
+    "publication": "Tech Max Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 7,
+        "name": "Cummins College Of Engg",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 167,
+    "title": "Engineering Physics",
+    "description": null,
+    "price": "184.25000000000003",
+    "mrp": "410",
+    "authors": "K.C.Nandi/S.N.Shukla",
+    "quality": "heavily used",
+    "markings": "few markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:33 UTC",
+    "publication": "Tech Max Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 11,
+        "name": "Sinhagad College Of Engineering",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 174,
+    "title": "Engineering Graphics  I",
+    "description": null,
+    "price": "203.50000000000003",
+    "mrp": "485",
+    "authors": "Arunoday Kumar",
+    "quality": "fair",
+    "markings": "few markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:33 UTC",
+    "publication": "Tech Max Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 9,
+        "name": "Mit College Of Engg",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 179,
+    "title": "Engineering Physics",
+    "description": null,
+    "price": "274.45000000000005",
+    "mrp": "270",
+    "authors": "H.J Sawant And Arlikar",
+    "quality": "fair",
+    "markings": "few markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:33 UTC",
+    "publication": "Technical Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 9,
+        "name": "Mit College Of Engg",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 181,
+    "title": "Engineering Graphics  I",
+    "description": null,
+    "price": "145.75",
+    "mrp": "360",
+    "authors": "C.T Kunjir, P.B Daphalapurkar",
+    "quality": "fair",
+    "markings": "few markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:33 UTC",
+    "publication": "Technical Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 9,
+        "name": "Mit College Of Engg",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 5,
+    "title": "Engineering Chemistry",
+    "description": null,
+    "price": "200.75000000000003",
+    "mrp": "410",
+    "authors": "V.K.Walekar",
+    "quality": "like new",
+    "markings": "no markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:29 UTC",
+    "publication": "Tech Max Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 1,
+        "name": "Cummins College Of Engg.",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 12,
+    "title": "Engineering Mathematics 3",
+    "description": null,
+    "price": "275.0",
+    "mrp": "500",
+    "authors": "Dr.Gokhale Dr. Mujumdar Ss Kulkarni",
+    "quality": "fair",
+    "markings": "few markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:29 UTC",
+    "publication": "Nirali Publications",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 1,
+        "name": "Cummins College Of Engg.",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 17,
+    "title": "Engineering Mathematics  I",
+    "description": null,
+    "price": "77.0",
+    "mrp": "500",
+    "authors": "Dr Mujumdar And Dr M.Y Gokhale",
+    "quality": "like new",
+    "markings": "no markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:29 UTC",
+    "publication": "Nirali Prakashan",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 1,
+        "name": "Cummins College Of Engg.",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 24,
+    "title": "Engineering Materials:Properties And Selection",
+    "description": null,
+    "price": "228.25000000000003",
+    "mrp": "650",
+    "authors": "K.G.Budinski",
+    "quality": "fair",
+    "markings": "no markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:30 UTC",
+    "publication": "Prentice Hall India",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 1,
+        "name": "Cummins College Of Engg.",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 29,
+    "title": "Theory Of Computation",
+    "description": null,
+    "price": "200.75000000000003",
+    "mrp": "385",
+    "authors": "Sultania Dilip Kumar",
+    "quality": "fair",
+    "markings": "few markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:30 UTC",
+    "publication": "Tech Max Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 1,
+        "name": "Cummins College Of Engg.",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 31,
+    "title": "Engineering Mathematics 3",
+    "description": null,
+    "price": "275.0",
+    "mrp": "500",
+    "authors": "Dr.Gokhale Dr. Mujumdar Ss Kulkarni",
+    "quality": "fair",
+    "markings": "few markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:30 UTC",
+    "publication": "Nirali Publications",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 1,
+        "name": "Cummins College Of Engg.",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 36,
+    "title": "Machine Design",
+    "description": null,
+    "price": "302.5",
+    "mrp": null,
+    "authors": "R.S Kurmi \u0026 J. K Gupta",
+    "quality": "fair",
+    "markings": "few markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:30 UTC",
+    "publication": "S Chand Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 3,
+        "name": "Mitcoe, Pune",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 43,
+    "title": "Basic Electrical Engg",
+    "description": null,
+    "price": "173.25",
+    "mrp": "370",
+    "authors": "J.S Katre",
+    "quality": "fair",
+    "markings": "few markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:30 UTC",
+    "publication": "Tech Max Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 4,
+        "name": "Mit,Pune",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 48,
+    "title": "Engineerig Mechanics",
+    "description": null,
+    "price": "200.75000000000003",
+    "mrp": "499",
+    "authors": "H.J Sawant And Anup Goel",
+    "quality": "fair",
+    "markings": "few markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:30 UTC",
+    "publication": "Technical Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 1,
+        "name": "Cummins College Of Engg.",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 50,
+    "title": "Engineering Mechanics",
+    "description": null,
+    "price": "156.75",
+    "mrp": "595",
+    "authors": "Sanju Unadkat",
+    "quality": "fair",
+    "markings": "no markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:30 UTC",
+    "publication": "Tech Max Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 5,
+        "name": "Mit, Pune",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 55,
+    "title": "Basic Electronics Engg",
+    "description": null,
+    "price": "145.75",
+    "mrp": "370",
+    "authors": "J.S Katre",
+    "quality": "fair",
+    "markings": "no markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:30 UTC",
+    "publication": "Tech Max Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 5,
+        "name": "Mit, Pune",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 62,
+    "title": "Electronics And Electrical Engineering",
+    "description": null,
+    "price": "310.75",
+    "mrp": "495",
+    "authors": "Katre J.S.",
+    "quality": "like new",
+    "markings": "no markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:30 UTC",
+    "publication": "Techmax Publications",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 1,
+        "name": "Cummins College Of Engg.",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 67,
+    "title": "Electromagnetics And Transmission Lines",
+    "description": null,
+    "price": "321.75",
+    "mrp": "495",
+    "authors": "Barapate R. A.",
+    "quality": "like new",
+    "markings": "no markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:31 UTC",
+    "publication": "Tech Max Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 1,
+        "name": "Cummins College Of Engg.",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 74,
+    "title": "Machine Design",
+    "description": null,
+    "price": "275.0",
+    "mrp": null,
+    "authors": "R.S Kurmi \u0026 J. K Gupta",
+    "quality": "like new",
+    "markings": "no markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:31 UTC",
+    "publication": "S Chand Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 8,
+        "name": "Pvg,College Of Engg.",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 79,
+    "title": "Machine Design",
+    "description": null,
+    "price": "275.0",
+    "mrp": null,
+    "authors": "R.S Kurmi \u0026 J. K Gupta",
+    "quality": "like new",
+    "markings": "no markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:31 UTC",
+    "publication": "S Chand Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 1,
+        "name": "Cummins College Of Engg.",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 81,
+    "title": "Engineerig Mechanics",
+    "description": null,
+    "price": "143.0",
+    "mrp": "499",
+    "authors": "H.J Sawant And Anup Goel",
+    "quality": "like new",
+    "markings": "few markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:31 UTC",
+    "publication": "Technical Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 1,
+        "name": "Cummins College Of Engg.",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 86,
+    "title": "Control Systems",
+    "description": null,
+    "price": "159.5",
+    "mrp": "495",
+    "authors": "U.A.Bakshi,V.U.Bakshi",
+    "quality": "like new",
+    "markings": "no markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:31 UTC",
+    "publication": "Technical Publications",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 1,
+        "name": "Cummins College Of Engg.",
+        "abbr": null,
+        "city": null
+    }
+}, {
+    "id": 93,
+    "title": "Control Systems",
+    "description": null,
+    "price": "159.5",
+    "mrp": "595",
+    "authors": "Theckedath Dhananjay",
+    "quality": "like new",
+    "markings": "no markings",
+    "sold": false,
+    "created_at": "2014-12-09 09:46:31 UTC",
+    "publication": "Tech Max Publication",
+    "image": {
+        "thumb": null
+    },
+    "college": {
+        "id": 1,
+        "name": "Cummins College Of Engg.",
+        "abbr": null,
+        "city": null
+    }
+}]

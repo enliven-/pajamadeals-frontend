@@ -20,7 +20,6 @@ app.router
   })
 
   .on('route:new', function() {
-    // {target_sel: '#form-container'}
     listingsView.renderForm();
   })
 

@@ -15,7 +15,7 @@ app.ListingView = Backbone.View.extend({
 
   render: function() {
     var that = this;
-    $.get('/partials/listing.mst', function(template) {
+    $.get('/partials/listing2.mst', function(template) {
       var rendered = Mustache.render(template, that.model.toJSON() );
       that.$el.html( rendered );
     });
@@ -23,14 +23,15 @@ app.ListingView = Backbone.View.extend({
   },
 
   placeOrder : function() {
-    return false;
+    console.log('place')
     var data  = {
                   listing_id : this.model.id,
                   buyer_attributes : { name : 'Bhushan Lodha', mobile : '9975454384' }
                 };
     var order = new app.Order(data);
+    console.log(order.toJSON())
     order.save({
-      success : function(m, r, o) { console.log(r); },
+      success : function(m, r, o) { console.log(r); app.router.trigger('route:orders'); },
       error   : function(m, r, o) { console.log(r); }
     });
   }

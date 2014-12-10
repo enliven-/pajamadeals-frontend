@@ -10,7 +10,7 @@ app.OrdersView = Backbone.View.extend({
   },
   
   render : function() {
-    console.log('rendering orders')
+    this.$el.html('');
     var that = this;
     this.collection.fetch({
       success :   function(response) {
@@ -26,6 +26,7 @@ app.OrdersView = Backbone.View.extend({
   },
 
   renderOrder: function( item ) {
+    console.log(item)
     var orderView = new app.OrderView({ model: item });
     this.$el.append( orderView.render().el );
   },

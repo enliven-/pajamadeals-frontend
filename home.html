@@ -11,7 +11,9 @@
 
 <nav id="">
   <div class="container">
-    <div class="nav-wrapper"><a href class="brand-logo">pajamadeals</a>
+    <div class="nav-wrapper">
+    <!-- <a href class="brand-logo">pajamadeals</a> -->
+      <input style="width: 60%;" class="search-input hidden" id="search" autocomplete="off" type="text" required="">
       <ul id="nav-mobile" class="right side-nav">
         <li>
           <a href>Listings</a>
@@ -22,7 +24,11 @@
         <li>
           <a href>Post Listing</a>
         </li>
-      </ul><a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+      <ul class="right">
+        <a href="" data-activates="" class="right search tool"><i class="mdi-action-search"></i></a>
+      </ul>
     </div>
   </div>
 </nav>
@@ -106,20 +112,20 @@
           <form class="col s12 listing">
             <div class="row">
               <div class="input-field col s12">
-                <input id="title" type="text" autocomplete="off" _required>
+                <input id="title" type="text" autocomplete="off" required>
                 <label for="title">Title</label>
               </div>
             </div>
             <div class="hide hidden">
             <div class="row">
               <div class="input-field col s12">
-                <input id="authors" disabled="" type="text" _required>
+                <input id="authors" disabled="" type="text" required>
                 <label for="authors">Authors</label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
-                <input id="publication"  disabled=""  type="text" _required>
+                <input id="publication"  disabled=""  type="text" required>
                 <label for="publication">Publicaiton</label>
               </div>
             </div>
@@ -157,17 +163,17 @@
             <br>
             <div class="row">
               <div class="input-field col s12">
-                <input id="mrp" type="text" _required>
+                <input id="mrp" type="text" required>
                 <label for="mrp">MRP</label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s6">
-                <input id="price" type="text" _required>
+                <input id="price" type="text" required>
                 <label for="price">Price</label>
               </div>
               <div class="input-field col s6">
-                <input id="sug-price"  disabled="" type="text" _required>
+                <input id="sug-price"  disabled="" type="text" required>
                 <label for="sug-price">Suggested Price</label>
               </div>
             </div>
@@ -242,7 +248,7 @@ input, textarea {
 .order {
   border-bottom: 1px solid gray;
 }
-form .input-field input[type=text]:valid {
+.input-field input[type=text]:valid {
   border-bottom: none;
   box-shadow: 1px solid #bdbdbd;
   -webkit-box-shadow: 1px solid #bdbdbd;
@@ -252,6 +258,40 @@ form .input-field input[type=text]:valid {
   box-shadow: 1px solid #bdbdbd;
   -webkit-box-shadow: 1px solid #bdbdbd;
 }
+
+.tabs-wrapper + .container {
+  margin: auto;
+  width: 95%;
+  padding: 0px;
+}
+
+.card {
+  box-shadow: none;
+  margin-top: 0px;
+  -webkit-box-shadow: none;
+  border-bottom: 1px solid lightgray;
+}
+.card > .row {
+  margin-bottom: 0px;
+}
+.mdi-action-search, .mdi-navigation-close, nav a.button-collapse i {
+  font-size: 2.0rem;
+}
+input#search {
+  margin-bottom: 0px;
+  margin-left: 15px;
+  height: 3.5rem;
+  line-height: 1em;
+}
+input#search:focus {
+  border-bottom: none;
+  box-shadow: 1px solid #bdbdbd !important;
+  -webkit-box-shadow: 1px solid #bdbdbd !important;
+  height: 3.5rem;
+}
+#listings-container {
+  margin-top: -20px;
+}
 </style>
 <script>
 $(document).ready(function() {
@@ -260,18 +300,13 @@ $(document).ready(function() {
 
 
   $('#listings').on('click', function(e) {
-
+    console.log('listings!')
   });
 
   $('#orders').on('click', function(e) {
-    console.log('orders');
-    console.log(app.router);
     app.router.trigger('route:orders')
   });
 
-  $('#orders').on('click', function(e) {
-
-  });
 
   $.widget( "ui.autocomplete", $.ui.autocomplete, {
     _renderMenu : function( ul, items ) {
@@ -296,7 +331,20 @@ $(document).ready(function() {
 
 
   $("#title").autocomplete({
-    source      : '/api/books.json',
+    source      : function(req, resp_fn) {
+                    var term = req.term.toLowerCase();
+                    console.log(term)
+                    $.ajax({
+                      // url       : '/api/books.json',
+                      url       : 'http://localhost:9393/books',
+                      dataType  : 'json',
+                      success   : function(response) {
+                                    var results = _.filter(response, function(item) { return item.title.toLowerCase().indexOf(term) != -1; } );
+                                    resp_fn(results)
+                                  },
+                      error     : function(response) { console.log('error in autocomplete'); }
+                    });
+                  },
     minLength   : 4,
     messages    : {
                     noResults   : '',
@@ -307,6 +355,8 @@ $(document).ready(function() {
                     $('#title').attr('disabled', '').val(book.title);
                   }
   });
+
+
 
   var populateAndShowForm = function(book) {
     $('#title').val(book.title);
@@ -319,10 +369,17 @@ $(document).ready(function() {
     $('form .hide.hidden').removeClass('hidden');
   };
 
-  $('body').on('click', 'button.create', function(e){
+  $('.nav-wrapper').on('click', '.search', function(e) {
     e.preventDefault();
-    console.log('create')
-  });  
+    $('.search-input').removeClass('hidden').focus();
+    $(this).removeClass('search').addClass('search-close').find('i').removeClass().addClass('mdi-navigation-close');
+  });
+
+  $('.nav-wrapper').on('click', '.search-close', function(e) {
+    e.preventDefault();
+    $('.search-input').blur().addClass('hidden').val('');
+    $(this).removeClass('search-close').addClass('search').find('i').removeClass().addClass('mdi-action-search');
+  });
 
 });
 </script>
