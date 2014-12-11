@@ -5,10 +5,13 @@ app.OrdersView = Backbone.View.extend({
 
   el        : $('#orders-container'),
 
-  initialize : function() {
+  initialize : function(options) {
     this.collection = new app.Orders();
+    this.options    = options || {};
     var that = this;
     this.collection.fetch({
+      traditional   : true,
+      data          : this.options,
       success: function(response) { console.log('fetched orders successfully!'); },
       error  : function(response) { console.log('error'); }
     });
@@ -17,13 +20,14 @@ app.OrdersView = Backbone.View.extend({
   render : function() {
     var that = this;
     this.collection.fetch({
+      traditional   : true,
+      data          : this.options,
       success: function(response) { console.log('fetched orders successfully!!!'); that.renderOrders(); },
       error  : function(response) { console.log('error'); }
     });
   },
 
   renderOrders : function() {
-    this.$el.html('');
     this.collection.each(function(item) { 
       this.renderOrder(item);
     }, this );

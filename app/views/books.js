@@ -10,8 +10,8 @@ app.BooksView = Backbone.View.extend({
     this.collection = new app.Books();
     var that = this;
     this.collection.fetch({
-      success: function(response) { that.render(); },
-      error  : function(response) { console.log('error'); }
+      success       : function(response) { that.render(); },
+      error         : function(response) { console.log('error'); }
     });
   },
   

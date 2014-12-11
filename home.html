@@ -13,7 +13,7 @@
   <div class="container">
     <div class="nav-wrapper">
     <span class="brand-logo">pajamadeals</span>
-      <input style="width: 60%;" class="search-input hidden" id="search" autocomplete="off" type="text">
+      <input style="width: 60%;" class="search-input hidden" id="search" autocomplete="off" type="text" placeholder="Search listings ">
       <ul id="nav-mobile" class="right side-nav ?grey ?darken-2">
         <li class="nav-logo">
           <a href>pajamadeals</a>
@@ -116,35 +116,35 @@
           <form class="col s12 listing">
             <div class="row">
               <div class="input-field col s12">
-                <input id="title" type="text" autocomplete="off" required>
+                <input name="title" id="title" type="text" class="disable" autocomplete="off" required>
                 <label for="title">Title</label>
               </div>
             </div>
             <div class="hide hidden">
             <div class="row">
               <div class="input-field col s12">
-                <input id="authors" disabled="" type="text" required>
+                <input name="authors" id="authors" class="disable" disabled="" type="text" required>
                 <label for="authors">Authors</label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
-                <input id="publication"  disabled=""  type="text" required>
+                <input name="publication" id="publication"  class="disable" disabled=""  type="text" required>
                 <label for="publication">Publicaiton</label>
               </div>
             </div>
             <div class="row">
               <p class="grey-text">Condition</p>  
               <div class="input-field col s4">
-                <input name="group1" type="radio" id="test1"/>
+                <input name="quality" value="like new" type="radio" id="test1"/>
                 <label for="test1">Like New</label>
               </div>
               <div class="input-field col s3">
-                <input name="group1" type="radio" id="test2"/>
+                <input name="quality" value="fair" type="radio" id="test2"/>
                 <label for="test2">Fair</label>
               </div>
               <div class="input-field col s4">
-                <input name="group1" type="radio" id="test3"/>
+                <input name="quality" value="heavily used" type="radio" id="test3"/>
                 <label for="test3">Heavily Used</label>    
               </div>
             </div>
@@ -152,38 +152,38 @@
             <div class="row">
               <p class="grey-text">Markings</p>  
               <div class="input-field col s4">
-                <input name="group2" type="radio" id="test4"/>
+                <input name="markings" value="no markings" type="radio" id="test4"/>
                 <label for="test4">None</label>
               </div>
               <div class="input-field col s3">
-                <input name="group2" type="radio" id="test5"/>
+                <input name="markings" value="few markings" type="radio" id="test5"/>
                 <label for="test5">Few</label>
               </div>
               <div class="input-field col s4">
-                <input name="group2" type="radio" id="test6"/>
+                <input name="markings" value="heavily marked" type="radio" id="test6"/>
                 <label for="test6">Heavy</label>  
               </div>
             </div>
             <br>
             <div class="row">
               <div class="input-field col s12">
-                <input id="mrp" type="text" required>
+                <input name="mrp" id="mrp" type="text" required>
                 <label for="mrp">MRP</label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s6">
-                <input id="price" type="text" required>
+                <input name="price" id="price" type="text" required>
                 <label for="price">Price</label>
               </div>
               <div class="input-field col s6">
-                <input id="sug-price"  disabled="" type="text" required>
+                <input name="sug-price" id="sug-price"  class="disable" disabled="" type="text" required>
                 <label for="sug-price">Suggested Price</label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
-                <textarea id="description"></textarea>                
+                <textarea name="description" id="description"></textarea>                
                 <label for="description">Description</label>
               </div>
             </div>
@@ -194,9 +194,9 @@
                 </button>
               </div>
               <div class="input-field col s6">
-                <button class="btn waves-effect waves-light create" type="submit" name="action">Submit
+                <a class="btn waves-effect waves-light create" name="action">Submit
                   <i class="mdi-navigation-check right"></i>
-                </button>
+                </a>
               </div>
             </div>
           </form>
@@ -331,10 +331,14 @@ $(document).ready(function() {
 
   $('#listings').on('click', function(e) {
     console.log('listings!')
+    app.router.trigger('route:home')
   });
 
   $('#orders').on('click', function(e) {
     app.router.trigger('route:orders')
+  });
+
+  $('#orders').on('click', function(e) {
   });
 
   $('#nav-listings').on('click', function(e){
@@ -357,6 +361,16 @@ $(document).ready(function() {
     $('#nav-mobile').animate( { "left": "-=240px" }, "slow");
     $('#sidenav-overlay').remove();
   });
+
+
+  $('body').on('click', 'ul.tabs a', function(e) {
+    blur_search();
+  });
+
+  $('body').on('click', 'ul.side-nav a', function(e) {
+    blur_search();
+  });
+
 
 
   $.widget( "ui.autocomplete", $.ui.autocomplete, {
@@ -407,6 +421,36 @@ $(document).ready(function() {
                   }
   });
 
+  $("#search").autocomplete({
+    source      : function(req, resp_fn) {
+                    var term = req.term.toLowerCase();
+                    console.log(term)
+                    $.ajax({
+                      url       : 'http://localhost:9393/listings',
+                      dataType  : 'json',
+                      success   : function(response) {
+                                    var results = _.filter(response, function(item) { return item.title.toLowerCase().indexOf(term) != -1; } );
+                                    // resp_fn(results);
+                                    // console.log(results)
+                                    var filteredView = new app.ListingsView(results);
+                                    $('#listings-container').html('');
+                                    filteredView.renderListings();
+                                  },
+                      error     : function(response) { console.log('error in autocomplete'); }
+                    });
+                  },
+    minLength   : 4,
+    messages    : {
+                    noResults   : '',
+                    results     : function() {}
+                  },
+    select      : function( event, ui ) {
+                    // populateAndShowForm(ui.item);
+                    // $('#title').val(book.title);
+                    console.log('lll')
+                  }
+  });
+
 
 
   var populateAndShowForm = function(book) {
@@ -421,6 +465,7 @@ $(document).ready(function() {
   };
 
   var focus_search = function() {
+    $('#listings').click();
     $('.brand-logo').html('');
     $('.search-input').removeClass('hidden').focus();
     $('.search').removeClass('search').addClass('search-close').find('i').removeClass().addClass('mdi-navigation-close');
@@ -442,6 +487,7 @@ $(document).ready(function() {
   $('.nav-wrapper').on('click', '.search-close', function(e) {
     e.preventDefault();
     blur_search();
+    app.router.trigger('route:home');
   });
 
 });
