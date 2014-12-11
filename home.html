@@ -12,17 +12,21 @@
 <nav id="">
   <div class="container">
     <div class="nav-wrapper">
-    <!-- <a href class="brand-logo">pajamadeals</a> -->
-      <input style="width: 60%;" class="search-input hidden" id="search" autocomplete="off" type="text" required="">
-      <ul id="nav-mobile" class="right side-nav">
-        <li>
-          <a href>Listings</a>
+    <span class="brand-logo">pajamadeals</span>
+      <input style="width: 60%;" class="search-input hidden" id="search" autocomplete="off" type="text">
+      <ul id="nav-mobile" class="right side-nav ?grey ?darken-2">
+        <li class="nav-logo">
+          <a href>pajamadeals</a>
+          <!-- <span>With <i class="mdi-toggle-radio-button-off"></i>!</span> -->
         </li>
         <li>
-          <a href>My Orders</a>
+          <a id="nav-listings" href="#/listings">Listings</a>
         </li>
         <li>
-          <a href>Post Listing</a>
+          <a id="nav-orders" href="#/orders">My Orders</a>
+        </li>
+        <li>
+          <a id="nav-new" href="#/new">Post Listing</a>
         </li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
@@ -292,6 +296,32 @@ input#search:focus {
 #listings-container {
   margin-top: -20px;
 }
+nav .brand-logo {
+  width: auto;
+  margin-left: 22%; 
+}
+
+ul#nav-mobile.side-nav {
+  background-color: #3c3933;
+}
+
+.nav-logo {
+ background-color: #ee6e73;
+}
+.nav-logo > a {
+ font-size: 1.5rem !important;
+}
+
+ul#nav-mobile.side-nav > li:not(:first-child) {
+  line-height: 45px;
+}
+ul#nav-mobile.side-nav > li {
+  border-bottom: 1px solid #57544e;
+}
+ul#nav-mobile.side-nav > li > a {
+  color: white;
+  font-size: 1.2rem;
+}
 </style>
 <script>
 $(document).ready(function() {
@@ -305,6 +335,27 @@ $(document).ready(function() {
 
   $('#orders').on('click', function(e) {
     app.router.trigger('route:orders')
+  });
+
+  $('#nav-listings').on('click', function(e){
+    e.preventDefault();
+    $('#listings').click();
+    $('#nav-mobile').animate( { "left": "-=240px" }, "slow");
+    $('#sidenav-overlay').remove();
+  });
+
+  $('#nav-orders').on('click', function(e){
+    e.preventDefault();
+    $('#orders').click();
+    $('#nav-mobile').animate( { "left": "-=240px" }, "slow");
+    $('#sidenav-overlay').remove();
+  });
+
+  $('#nav-new').on('click', function(e){
+    e.preventDefault();
+    $('#new').click();
+    $('#nav-mobile').animate( { "left": "-=240px" }, "slow");
+    $('#sidenav-overlay').remove();
   });
 
 
@@ -369,16 +420,28 @@ $(document).ready(function() {
     $('form .hide.hidden').removeClass('hidden');
   };
 
+  var focus_search = function() {
+    $('.brand-logo').html('');
+    $('.search-input').removeClass('hidden').focus();
+    $('.search').removeClass('search').addClass('search-close').find('i').removeClass().addClass('mdi-navigation-close');
+  };
+
+  var blur_search  = function() {
+    $('.brand-logo').addClass('hidden');
+    $('.search-input').blur().addClass('hidden').val('');
+    $('nav .brand-logo').html('pajamadeals');
+    $('.search-close').removeClass('search-close').addClass('search').find('i').removeClass().addClass('mdi-action-search');
+  };
+
+
   $('.nav-wrapper').on('click', '.search', function(e) {
     e.preventDefault();
-    $('.search-input').removeClass('hidden').focus();
-    $(this).removeClass('search').addClass('search-close').find('i').removeClass().addClass('mdi-navigation-close');
+    focus_search();
   });
 
   $('.nav-wrapper').on('click', '.search-close', function(e) {
     e.preventDefault();
-    $('.search-input').blur().addClass('hidden').val('');
-    $(this).removeClass('search-close').addClass('search').find('i').removeClass().addClass('mdi-action-search');
+    blur_search();
   });
 
 });

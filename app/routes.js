@@ -16,7 +16,7 @@ var listingsView  = new app.ListingsView();
 app.router
   .on('route:home', function() {
     listingsView.render();
-    setTimeout(function(){ Waves.displayEffect(); }, 1000);
+    setTimeout(function(){ Waves.displayEffect(); }, 300);
   })
 
   .on('route:new', function() {
@@ -24,7 +24,6 @@ app.router
   })
 
   .on('route:orders', function() {
-    console.log('yes!')
     myOrders.render();
   });
 

@@ -17,7 +17,16 @@ app.ListingsView = Backbone.View.extend({
     });
   },
   
+
   render : function() {
+    var that = this;
+    this.collection.fetch({
+      success: function(response) { console.log('fetched data successfully!!!'); that.renderListings(); },
+      error  : function(response) { console.log('error'); }
+    });
+  },
+
+  renderListings : function() {
     this.collection.each(function(item) { 
       this.renderListing(item);
     }, this );
@@ -39,6 +48,7 @@ app.ListingsView = Backbone.View.extend({
   createListing : function() {
     var listing   = new app.Listing();
     this.collection.create( listing.attributes );
+    toast('Your listing has been created.')
   }
 
 });
