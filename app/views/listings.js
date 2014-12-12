@@ -18,13 +18,19 @@ app.ListingsView = Backbone.View.extend({
   },
   
 
-  render : function() {
-    this.collection = new app.Listings();
-    var that = this;
-    this.collection.fetch({
-      success: function(response) { console.log('fetched data successfully!!!'); that.renderListings(); },
-      error  : function(response) { console.log('error'); }
-    });
+  render : function(options) {
+    renderPreloader($('#listings-container'));
+    var refreshFlag = options.refresh;
+    if (refreshFlag) { 
+      this.collection = new app.Listings();
+      var that = this;
+      this.collection.fetch({
+        success: function(response) { console.log('fetched data successfully!!!'); that.renderListings(); },
+        error  : function(response) { console.log('error'); }
+      });
+    } else {
+      this.renderListings();
+    }
   },
 
   renderListings : function(collection) {

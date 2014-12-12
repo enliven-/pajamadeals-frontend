@@ -17,14 +17,19 @@ app.OrdersView = Backbone.View.extend({
     });
   },
 
-  render : function() {
-    var that = this;
-    this.collection.fetch({
-      traditional   : true,
-      data          : this.options,
-      success: function(response) { console.log('fetched orders successfully!!!'); that.renderOrders(); },
-      error  : function(response) { console.log('error'); }
-    });
+  render : function(options) {
+    var refreshFlag = options.refresh;
+    if (refreshFlag) {
+      var that = this;
+      this.collection.fetch({
+        traditional   : true,
+        data          : this.options,
+        success: function(response) { console.log('fetched orders successfully!!!'); that.renderOrders(); },
+        error  : function(response) { console.log('error'); }
+      });
+    } else {
+      this.renderOrders();
+    }
   },
 
   renderOrders : function() {

@@ -16,12 +16,12 @@ var listingsView  = new app.ListingsView();
 
 
 // initialize
-listingsView.render();
+
+listingsView.render({ refresh : true });
 
 app.router
   .on('route:home', function() {
-    renderPreloader($('#listings-container'));
-    listingsView.render();
+    listingsView.render({ refresh : false });
     setTimeout(function(){ Waves.displayEffect(); }, 300);
   })
 
@@ -31,7 +31,7 @@ app.router
 
   .on('route:orders', function() {
     renderPreloader($('#orders-container'));
-    myOrders.render();
+    myOrders.render({ refresh : true });
     setTimeout(function(){ Waves.displayEffect(); }, 300);
   });
 

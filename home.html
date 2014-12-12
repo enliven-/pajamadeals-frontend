@@ -70,7 +70,7 @@
     <div class="row">
       <div class="col s12" id="listings-container">
 
-  <div class="preloader-wrapper small active" style="margin-top: 20%; margin-left: 40%;">
+  <div class="preloader-wrapper small active" style="margin-top: 20%; margin-left: 45%;">
     <div class="spinner-layer spinner-blue">
       <div class="circle-clipper left">
         <div class="circle"></div>
@@ -250,7 +250,7 @@
 
 
 <script type="text/template" id="pre-loader">
-  <div class="preloader-wrapper small active" style="margin-top: 20%; margin-left: 40%;">
+  <div class="preloader-wrapper small active" style="margin-top: 20%; margin-left: 45%;">
     <div class="spinner-layer spinner-blue">
       <div class="circle-clipper left">
         <div class="circle"></div>
@@ -522,6 +522,9 @@ $(document).ready(function() {
     messages    : {
                     noResults   : '',
                     results     : function() {}
+                  },
+    search      : function(event, ui) {
+                    renderPreloader($('#listings-container'));
                   },
     select      : function( event, ui ) {
                     // populateAndShowForm(ui.item);
