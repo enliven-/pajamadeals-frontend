@@ -18,12 +18,13 @@ app.OrdersView = Backbone.View.extend({
   },
 
   render : function(options) {
+    renderPreloader($('#orders-container'));
     var refreshFlag = options.refresh;
     if (refreshFlag) {
       var that = this;
       this.collection.fetch({
-        traditional   : true,
-        data          : this.options,
+        // traditional   : true,
+        // data          : this.options,
         success: function(response) { console.log('fetched orders successfully!!!'); that.renderOrders(); },
         error  : function(response) { console.log('error'); }
       });
@@ -33,6 +34,7 @@ app.OrdersView = Backbone.View.extend({
   },
 
   renderOrders : function() {
+    $('#orders-container').html('');
     this.collection.each(function(item) { 
       this.renderOrder(item);
     }, this );
@@ -41,6 +43,7 @@ app.OrdersView = Backbone.View.extend({
   renderOrder: function( item ) {
     var orderView = new app.OrderView({ model: item });
     this.$el.append( orderView.render().el );
+    // $('#orders-container').append( orderView.render().el )
   },
 
 });

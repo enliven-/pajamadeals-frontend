@@ -16,8 +16,8 @@ var listingsView  = new app.ListingsView();
 
 
 // initialize
-
 listingsView.render({ refresh : true });
+myOrders.render({ refresh : true });
 
 app.router
   .on('route:home', function() {
@@ -30,9 +30,8 @@ app.router
   })
 
   .on('route:orders', function() {
-    renderPreloader($('#orders-container'));
-    myOrders.render({ refresh : true });
-    setTimeout(function(){ Waves.displayEffect(); }, 300);
+    myOrders.render({ refresh : false });
+    // setTimeout(function(){ Waves.displayEffect(); }, 300);
   });
 
 Backbone.history.start();

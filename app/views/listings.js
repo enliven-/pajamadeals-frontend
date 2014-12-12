@@ -19,7 +19,7 @@ app.ListingsView = Backbone.View.extend({
   
 
   render : function(options) {
-    renderPreloader($('#listings-container'));
+    // renderPreloader($('#listings-container'));
     var refreshFlag = options.refresh;
     if (refreshFlag) { 
       this.collection = new app.Listings();
