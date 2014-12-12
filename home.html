@@ -70,6 +70,50 @@
     <div class="row">
       <div class="col s12" id="listings-container">
 
+  <div class="preloader-wrapper small active" style="margin-top: 20%; margin-left: 40%;">
+    <div class="spinner-layer spinner-blue">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+
+    <div class="spinner-layer spinner-red">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+
+    <div class="spinner-layer spinner-yellow">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+
+    <div class="spinner-layer spinner-green">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+
+
+
       </div>
     </div>
   </div>
@@ -202,6 +246,59 @@
 
 </div>
 
+
+
+
+<script type="text/template" id="pre-loader">
+  <div class="preloader-wrapper small active" style="margin-top: 20%; margin-left: 40%;">
+    <div class="spinner-layer spinner-blue">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+
+    <div class="spinner-layer spinner-red">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+
+    <div class="spinner-layer spinner-yellow">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+
+    <div class="spinner-layer spinner-green">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+</script>
+
+
+
+
+
+
+
 <script type="text/javascript" src="assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="assets/js/underscore.min.js"></script>
@@ -288,7 +385,7 @@ input#search:focus {
   height: 3.5rem;
 }
 #listings-container {
-  margin-top: -20px;
+  /*margin-top: -20px;*/
 }
 nav .brand-logo {
   width: auto;
@@ -321,6 +418,13 @@ ul#nav-mobile.side-nav > li > a {
   margin-bottom: 0px;
 }
 
+#toast-container {
+  margin-bottom: 20px;
+}
+#toast-container > .toast {
+  width: 95% !important;
+  margin: auto;
+}
 
 </style>
 <script>
@@ -512,5 +616,7 @@ $(document).ready(function() {
 
 });
 </script>
+
+
 </body>
 </html>

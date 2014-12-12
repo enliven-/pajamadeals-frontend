@@ -28,6 +28,7 @@ app.ListingsView = Backbone.View.extend({
   },
 
   renderListings : function(collection) {
+    $('#listings-container').html('');
     this.collection.each(function(item) { 
       this.renderListing(item);
     }, this );
