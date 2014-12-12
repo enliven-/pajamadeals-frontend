@@ -94,22 +94,16 @@
 
 
 
-
-
-
-
-
-
-
 <div id="tab3" class="col s12">
   <div class="row">
     <div class="col s12" id="form-container">
 
       <div id="input" class="section scrollspy">
         <div class="row">
-          <div class="col s12">
+          <div class="col s2 offset-s9">
             <!-- <h5>New Listing</h5> -->
             <!-- <p>Text fields allow user input. The border should light up simply and clearly indicating which field the user is currently editing.</p> -->
+            <a href="#/" class="form-close"><i class="mdi-navigation-close red-text hide hidden"></i></a>
           </div>
         </div>
         <div class="row">
@@ -322,6 +316,12 @@ ul#nav-mobile.side-nav > li > a {
   color: white;
   font-size: 1.2rem;
 }
+
+#form-container > .scrollspy > .row:first-child {
+  margin-bottom: 0px;
+}
+
+
 </style>
 <script>
 $(document).ready(function() {
@@ -395,31 +395,6 @@ $(document).ready(function() {
   });
 
 
-  $("#title").autocomplete({
-    source      : function(req, resp_fn) {
-                    var term = req.term.toLowerCase();
-                    console.log(term)
-                    $.ajax({
-                      // url       : '/api/books.json',
-                      url       : 'http://localhost:9393/books',
-                      dataType  : 'json',
-                      success   : function(response) {
-                                    var results = _.filter(response, function(item) { return item.title.toLowerCase().indexOf(term) != -1; } );
-                                    resp_fn(results)
-                                  },
-                      error     : function(response) { console.log('error in autocomplete'); }
-                    });
-                  },
-    minLength   : 4,
-    messages    : {
-                    noResults   : '',
-                    results     : function() {}
-                  },
-    select      : function( event, ui ) {
-                    populateAndShowForm(ui.item);
-                    $('#title').attr('disabled', '').val(book.title);
-                  }
-  });
 
   $("#search").autocomplete({
     source      : function(req, resp_fn) {
@@ -452,6 +427,33 @@ $(document).ready(function() {
   });
 
 
+  $("#title").autocomplete({
+    source      : function(req, resp_fn) {
+                    var term = req.term.toLowerCase();
+                    console.log(term)
+                    $.ajax({
+                      // url       : '/api/books.json',
+                      url       : 'http://localhost:9393/books',
+                      dataType  : 'json',
+                      success   : function(response) {
+                                    var results = _.filter(response, function(item) { return item.title.toLowerCase().indexOf(term) != -1; } );
+                                    resp_fn(results)
+                                  },
+                      error     : function(response) { console.log('error in autocomplete'); }
+                    });
+                  },
+    minLength   : 4,
+    messages    : {
+                    noResults   : '',
+                    results     : function() {}
+                  },
+    select      : function( event, ui ) {
+                    populateAndShowForm(ui.item);
+                    $('#title').attr('disabled', '').val(book.title);
+                  }
+  });
+
+
 
   var populateAndShowForm = function(book) {
     $('#title').val(book.title);
@@ -461,7 +463,7 @@ $(document).ready(function() {
 
 
     $('form input[type=text] + label').addClass('active');
-    $('form .hide.hidden').removeClass('hidden');
+    $('#form-container .hide.hidden').removeClass('hidden');
   };
 
   var focus_search = function() {
@@ -489,6 +491,24 @@ $(document).ready(function() {
     blur_search();
     app.router.trigger('route:home');
   });
+
+ 
+  var clearForm = function() {
+    $('form input[type="text"]').each(function() {
+        $(this).val("");  
+    });
+    $('form input[type="radio"]').each(function() {
+        $(this).prop('checked', false);
+    });
+  }
+
+  $('body').on('click', '.form-close', function(e) {
+    clearForm();
+    $('#form-container .hide').addClass('hidden');
+    $('#title').removeAttr('disabled').focus();
+  });
+
+
 
 });
 </script>
