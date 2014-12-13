@@ -1,3 +1,3 @@
 get '/' do
-  send_file 'index.html'
+  send_file File.join(settings.public_folder, 'index.html')
 end
