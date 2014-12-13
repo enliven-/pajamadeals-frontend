@@ -8,16 +8,33 @@ app.ListingsView = Backbone.View.extend({
                       'click .create' : 'createListing'
                     },
 
-  initialize : function() {
-    this.collection = new app.Listings();
+  initialize : function(models) {
+    this.collection = new app.Listings(models);
     var that = this;
     this.collection.fetch({
-      success: function(response) { console.log('fetched data successfully!'); that.render(); },
+      success: function(response) { console.log('fetched data successfully!'); },
       error  : function(response) { console.log('error'); }
     });
   },
   
-  render : function() {
+
+  render : function(options) {
+    renderPreloader($('#listings-container'));
+    var refreshFlag = options.refresh;
+    if (refreshFlag) { 
+      this.collection = new app.Listings();
+      var that = this;
+      this.collection.fetch({
+        success: function(response) { console.log('fetched data successfully!!!'); that.renderListings(); },
+        error  : function(response) { console.log('error'); }
+      });
+    } else {
+      this.renderListings();
+    }
+  },
+
+  renderListings : function(collection) {
+    $('#listings-container').html('');
     this.collection.each(function(item) { 
       this.renderListing(item);
     }, this );
@@ -37,8 +54,26 @@ app.ListingsView = Backbone.View.extend({
   },
 
   createListing : function() {
-    var listing   = new app.Listing();
-    this.collection.create( listing.attributes );
-  }
+    $('input.disable').removeAttr('disabled');
+    var data      = this.$el.find('form.listing').serializeObject();
+    console.log(data);
+    delete data.title
+    delete data.authors
+    delete data.publication
+    delete data['sug-price']
+    delete data.mrp
+    var listing   = new app.Listing(data);
+    console.log(listing.toJSON())
+    // return false;
+    setTimeout(function() { toast('Processing your listing'); }, 500);
+    this.collection.create( listing.attributes, {
+      success : function() { $('#toast-container').remove(); toast('Your listing has been created!'); $('#listings').click(); },
+      error   : function() { toast('Error creating listing'); }
+    } );
+    
+  },
+
+
+
 
 });

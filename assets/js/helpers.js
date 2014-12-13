@@ -32,3 +32,9 @@ $.fn.serializeObject = function() {
   });
   return o;
 };
+
+var renderPreloader = function($target) {
+  $target.html('');
+  var preloader = $('#pre-loader').html();
+  $target.html(preloader);
+}

@@ -22,8 +22,6 @@ app.Order = Backbone.Model.extend({
   loadListing : function() {
     var that = this;
     $.ajax({
-      // url : '/api/listings.json',
-      // url       : 'http://192.168.1.100:9393/listings',
       url      : 'http://localhost:9393/listings',
       dataType : 'json',
       success  : function(response) { 

@@ -8,15 +8,21 @@ var Router = Backbone.Router.extend({
   }
 });
 
+
 app.router        = new Router;
-var myOrders      = new app.OrdersView();
+var params        = { mobile : '9975454384'}
+var myOrders      = new app.OrdersView(params);
 var listingsView  = new app.ListingsView();
 
 
+// initialize
+
+listingsView.render({ refresh : true });
+
 app.router
   .on('route:home', function() {
-    listingsView.render();
-    setTimeout(function(){ Waves.displayEffect(); }, 1000);
+    listingsView.render({ refresh : false });
+    setTimeout(function(){ Waves.displayEffect(); }, 300);
   })
 
   .on('route:new', function() {
@@ -24,8 +30,9 @@ app.router
   })
 
   .on('route:orders', function() {
-    console.log('yes!')
-    myOrders.render();
+    renderPreloader($('#orders-container'));
+    myOrders.render({ refresh : true });
+    setTimeout(function(){ Waves.displayEffect(); }, 300);
   });
 
 Backbone.history.start();
