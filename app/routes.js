@@ -17,12 +17,11 @@ var listingsView  = new app.ListingsView();
 
 // initialize
 listingsView.render({ refresh : true });
-myOrders.render({ refresh : true });
 
 app.router
   .on('route:home', function() {
-    listingsView.render({ refresh : false });
-    setTimeout(function(){ Waves.displayEffect(); }, 300);
+    // listingsView.render({ refresh : true });
+    // setTimeout(function(){ Waves.displayEffect(); }, 300);
   })
 
   .on('route:new', function() {
@@ -30,7 +29,7 @@ app.router
   })
 
   .on('route:orders', function() {
-    myOrders.render({ refresh : false });
+    myOrders.render({ refresh : true });
     // setTimeout(function(){ Waves.displayEffect(); }, 300);
   });
 

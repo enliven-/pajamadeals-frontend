@@ -19,6 +19,7 @@ app.OrdersView = Backbone.View.extend({
 
   render : function(options) {
     renderPreloader($('#orders-container'));
+    console.log('rendering orders')
     var refreshFlag = options.refresh;
     if (refreshFlag) {
       var that = this;

@@ -12,7 +12,7 @@ app.ListingsView = Backbone.View.extend({
     this.collection = new app.Listings(models);
     var that = this;
     this.collection.fetch({
-      success: function(response) { console.log('fetched data successfully!'); },
+      success: function(response) { console.log('initialized and fetched data successfully!'); },
       error  : function(response) { console.log('error'); }
     });
   },

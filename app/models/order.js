@@ -6,6 +6,7 @@ app.Order = Backbone.Model.extend({
 
   initialize : function() {
     this.loadListing();
+    console.log('listing loaded')
   },
 
   cancel   :  function() {
