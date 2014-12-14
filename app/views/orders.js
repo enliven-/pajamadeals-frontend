@@ -5,12 +5,7 @@ app.OrdersView = Backbone.View.extend({
 
   tagName       : 'div',
   className     : 'orders',
-
   target_sel    : '#orders-container',
-
-  events        : {
-                    // 'click .cancel'   : 'cancelOrder',
-                  },
 
   initialize : function(options) {
     this.collection = new app.Orders();
@@ -20,7 +15,7 @@ app.OrdersView = Backbone.View.extend({
       // traditional   : true,
       // data          : this.options,
       success: function(response) { that.renderOrders(); },
-      error  : function(response) { console.log('error'); }
+      error  : function(response) { toast('Error loading orders', '3000'); }
     });
 
     this.listenTo(Backbone, 'order:placed', this.updateOrders);
@@ -28,14 +23,13 @@ app.OrdersView = Backbone.View.extend({
 
   render : function() {
     $(this.target_sel).html( this.el );
-
   },
 
   updateOrders : function() {
     var that = this;
     this.collection.fetch({
       success: function(response) { that.renderOrders();  },
-      error  : function(response) { console.log('error'); }
+      error  : function(response) { toast('Error loading orders', '3000'); }
     });
   },
 
