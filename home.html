@@ -532,7 +532,8 @@ $(document).ready(function() {
                     var term = req.term.toLowerCase();
                     console.log(term)
                     $.ajax({
-                      url       : 'http://localhost:9393/listings',
+                      // url       : 'http://backend.pajamadeals.in/listings',
+                      url       : $.host + '/listings',
                       dataType  : 'json',
                       success   : function(response) {
                                     var results = _.filter(response, function(item) { return item.title.toLowerCase().indexOf(term) != -1; } );
@@ -567,7 +568,9 @@ $(document).ready(function() {
                     console.log(term)
                     $.ajax({
                       // url       : '/api/books.json',
-                      url       : 'http://localhost:9393/books',
+                      // url       : 'http://localhost:9393/books',
+                      // url       : 'http://backend.pajamadeals.in/books',
+                      url       : $.host + '/books',
                       dataType  : 'json',
                       success   : function(response) {
                                     var results = _.filter(response, function(item) { return item.title.toLowerCase().indexOf(term) != -1; } );

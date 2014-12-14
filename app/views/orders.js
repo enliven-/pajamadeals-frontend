@@ -13,8 +13,8 @@ app.OrdersView = Backbone.View.extend({
     this.options    = options || {};
     var that = this;
     this.collection.fetch({
-      // traditional   : true,
-      // data          : this.options,
+      traditional   : true,
+      data          : this.options,
       success: function(response) { that.renderOrders(); },
       error  : function(response) { toast('Error loading orders', '3000'); }
     });
@@ -32,6 +32,8 @@ app.OrdersView = Backbone.View.extend({
   updateOrders : function() {
     var that = this;
     this.collection.fetch({
+      traditional   : true,
+      data          : this.options,
       success: function(response) {  },
       error  : function(response) { toast('Error loading orders', '3000'); this.flag = true; }
     });

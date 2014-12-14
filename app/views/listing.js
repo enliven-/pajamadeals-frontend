@@ -26,20 +26,20 @@ app.ListingView = Backbone.View.extend({
     setTimeout(function(){ toast('Processing order.'); }, 500);
     var data  = {
                   listing_id : this.model.id,
-                  buyer_attributes : { name : 'Bhushan Lodha', mobile : '9975454384' }
+                  buyer_attributes : { name : 'Bhushan Lodha', mobile : '9975454384', college_id : 30 }
                 };
     var order = new app.Order();
 
     order.save(data, {
       success : function(model, response) {
-        $('#toast-container').remove();
-        app.router.trigger('route:orders');
-        $('#toast-container').remove();
-        setTimeout(function(){ toast('Order placed.'); }, 500);
-        // 
-        Backbone.trigger('order:placed');
-      },
-      error   : function(m, r, o) { console.log(m); console.log(r); }
+                  $('#toast-container').remove();
+                  setTimeout(function() { toast('Order placed.', '3000'); }, 500);
+                  Backbone.trigger('order:placed');
+                },
+      error   : function(m, r, o) {
+                  console.log(m); console.log(r);
+                  toast('Error placing order.', '3000');
+                }
     });
   }
 
