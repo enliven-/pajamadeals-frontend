@@ -1,7 +1,7 @@
 var app   = app || {};
 
 app.Listing = Backbone.Model.extend({
-  urlRoot   : $.host + '/listings',
+  urlRoot   : 'http://backend.pajamadeals.in/listings',
   defaults  : {
     book_id           : 2,
     // price             : 400,
