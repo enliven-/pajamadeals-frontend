@@ -12,7 +12,7 @@ app.ListingsView = Backbone.View.extend({
     this.collection = new app.Listings(models);
     var that = this;
     this.collection.fetch({
-      success: function(response) { console.log('initialized and fetched data successfully!'); },
+      success: function(response) { app.listings = that.collection; },
       error  : function(response) { toast('Error loading listings', '3000');  }
     });
   },
@@ -25,8 +25,8 @@ app.ListingsView = Backbone.View.extend({
       this.collection = new app.Listings();
       var that = this;
       this.collection.fetch({
-        success: function(response) { console.log('fetched data successfully!!!'); that.renderListings(); },
-        error  : function(response) { console.log('error'); }
+        success: function(response) { app.listings = that.collection; that.renderListings(); },
+        error  : function(response) { toast('Error loading listings', '3000'); }
       });
     } else {
       this.renderListings();
