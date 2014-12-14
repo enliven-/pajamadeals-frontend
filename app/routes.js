@@ -3,34 +3,31 @@ var Router = Backbone.Router.extend({
     'listings'        : 'home',
     'new'             : 'new',
     ':id/edit'        : 'edit',
-    'orders'          : 'orders',
+    'orders/:refresh' : 'orders',
     ''                : 'home',
   }
 });
+var params        = { mobile : '9975454384'}
 
 
 app.router        = new Router;
-var params        = { mobile : '9975454384'}
-var myOrders      = new app.OrdersView(params);
+var ordersView    = new app.OrdersView(params);
 var listingsView  = new app.ListingsView();
 
 
 // initialize
 listingsView.render({ refresh : true });
+// listingsView.renderForm();
 
 app.router
   .on('route:home', function() {
-    // listingsView.render({ refresh : true });
-    // setTimeout(function(){ Waves.displayEffect(); }, 300);
   })
 
   .on('route:new', function() {
-    listingsView.renderForm();
   })
 
-  .on('route:orders', function() {
-    myOrders.render({ refresh : true });
-    // setTimeout(function(){ Waves.displayEffect(); }, 300);
+  .on('route:orders', function(params) {
+    ordersView.render();
   });
 
 Backbone.history.start();

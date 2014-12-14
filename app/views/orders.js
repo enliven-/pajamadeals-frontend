@@ -3,39 +3,44 @@ var app = app || {};
 
 app.OrdersView = Backbone.View.extend({
 
-  el        : $('#orders-container'),
+  tagName       : 'div',
+  className     : 'orders',
+
+  target_sel    : '#orders-container',
+
+  events        : {
+                    // 'click .cancel'   : 'cancelOrder',
+                  },
 
   initialize : function(options) {
     this.collection = new app.Orders();
     this.options    = options || {};
     var that = this;
     this.collection.fetch({
-      traditional   : true,
-      data          : this.options,
-      success: function(response) { console.log('fetched orders successfully!'); },
+      // traditional   : true,
+      // data          : this.options,
+      success: function(response) { that.renderOrders(); },
+      error  : function(response) { console.log('error'); }
+    });
+
+    this.listenTo(Backbone, 'order:placed', this.updateOrders);
+  },
+
+  render : function() {
+    $(this.target_sel).html( this.el );
+
+  },
+
+  updateOrders : function() {
+    var that = this;
+    this.collection.fetch({
+      success: function(response) { that.renderOrders();  },
       error  : function(response) { console.log('error'); }
     });
   },
 
-  render : function(options) {
-    renderPreloader($('#orders-container'));
-    console.log('rendering orders')
-    var refreshFlag = options.refresh;
-    if (refreshFlag) {
-      var that = this;
-      this.collection.fetch({
-        // traditional   : true,
-        // data          : this.options,
-        success: function(response) { console.log('fetched orders successfully!!!'); that.renderOrders(); },
-        error  : function(response) { console.log('error'); }
-      });
-    } else {
-      this.renderOrders();
-    }
-  },
-
   renderOrders : function() {
-    $('#orders-container').html('');
+    this.$el.html('');
     this.collection.each(function(item) { 
       this.renderOrder(item);
     }, this );
@@ -44,7 +49,6 @@ app.OrdersView = Backbone.View.extend({
   renderOrder: function( item ) {
     var orderView = new app.OrderView({ model: item });
     this.$el.append( orderView.render().el );
-    // $('#orders-container').append( orderView.render().el )
   },
 
 });

@@ -9,14 +9,16 @@ app.Order = Backbone.Model.extend({
     console.log('listing loaded')
   },
 
-  cancel   :  function() {
+  cancel   :  function(options) {
+                var success_fn = options.success;
+                var error_fn   = options.error;
                 var that = this;
                 $.ajax({
                   type    : 'PUT',
                   url     : that.urlRoot,
                   data    : { id : that.id, status : 'cancelled' },
-                  success : function(r) { console.log('cancelled order'); console.log(r); app.router.trigger('route:orders'); },
-                  error   : function(r) { console.log('errored'); console.log(r); }
+                  success : function(r) { that.attributes = r; console.log(that.toJSON()); success_fn(); },
+                  error   : function(r) { error_fn(); }
                 });
               },
 

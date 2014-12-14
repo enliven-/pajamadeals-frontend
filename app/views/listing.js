@@ -15,7 +15,7 @@ app.ListingView = Backbone.View.extend({
 
   render: function() {
     var that = this;
-    $.get('/partials/listing2.mst', function(template) {
+    $.get('/partials/listing.mst', function(template) {
       var rendered = Mustache.render(template, that.model.toJSON() );
       that.$el.html( rendered );
     });
@@ -35,6 +35,8 @@ app.ListingView = Backbone.View.extend({
         $('#toast-container').remove();
         app.router.trigger('route:orders');
         setTimeout(function(){ toast('Order placed.'); }, 500);
+        // 
+        Backbone.trigger('order:placed');
       },
       error   : function(m, r, o) { console.log(m); console.log(r); }
     });

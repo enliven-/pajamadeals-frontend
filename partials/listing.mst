@@ -1,20 +1,24 @@
 <div class="card">
   <div class="row">
-    <div class="card-image col s2">
-      <img src="assets/images/book1.jpg">
+    <div style="padding: 20px 0 10px 20px;" class="card-image col s3">
+      <img style="height: 70px; width: 60px;" src="assets/images/book1.jpg">
     </div>
-    <div class="card-content col s10">
-      <span class="title">{{ title }}</span>
+    <div style="padding-left: 0px; padding-bottom: 0px;" class="card-content col s9">
+      <span style="font-size: 16px; font-weight: 500; color: gray;"class="title">{{ title }}</span> <br>
       <span class="vol">{{ vol }}</span>
-      <span class="authors">{{ authors }}</span>
-      <span class="publication">{{ publication }}</span>
-      <span class="condition">{{ condition }}</span>
-      <span class="markings">{{ markings }}</span>
-      <span class="mrp">{{ mrp }}</span>
-      <span class="price">{{ price }}</span>
+      <span style="font-weight: 300;" class="authors">{{ authors }}</span> <br>
+      <span style="font-weight: 200; font-size: 13px; font-style: italic;" class="publication">{{ publication }}</span> <br>
+      <span class="condition">{{ quality }}</span> <br>
+      <span class="markings">{{ markings }}</span> <br>
     </div>
   </div>
   <div class="row">
-    <div class="col s3 offset-s8"><a class="waves-effect waves-light btn white-text buy">Buy</a></div>
+    <div style="padding-left: 20px;" class="col s9">
+      Rs <span style="text-decoration: line-through;" class="mrp"> {{ mrp }}</span><br>
+      <span style="color: red;" class="price">  Rs {{ price }}</span>
+    </div>
+    <div class="col s3">
+      <a class="waves-effect waves-light btn white-text buy">Buy</a>
+    </div>
   </div>
 </div>
