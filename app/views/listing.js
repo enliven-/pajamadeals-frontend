@@ -34,6 +34,7 @@ app.ListingView = Backbone.View.extend({
       success : function(model, response) {
         $('#toast-container').remove();
         app.router.trigger('route:orders');
+        $('#toast-container').remove();
         setTimeout(function(){ toast('Order placed.'); }, 500);
         // 
         Backbone.trigger('order:placed');
