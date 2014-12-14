@@ -25,7 +25,8 @@ app.Order = Backbone.Model.extend({
   loadListing : function() {
     var that = this;
     $.ajax({
-      url      : 'http://localhost:9393/listings',
+      // url      : 'http://localhost:9393/listings',
+      url      : 'http://backend.pajamadeals.in/listings',
       dataType : 'json',
       success  : function(response) { 
                   that.listing = _.find(response, function(item) { return item.id === that.toJSON().listing_id });

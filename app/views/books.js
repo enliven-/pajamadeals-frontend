@@ -11,7 +11,7 @@ app.BooksView = Backbone.View.extend({
     var that = this;
     this.collection.fetch({
       success       : function(response) { that.render(); },
-      error         : function(response) { console.log('error'); }
+      error         : function(response) { toast('Error loading books', '3000'); }
     });
   },
   
