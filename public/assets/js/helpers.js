@@ -54,17 +54,19 @@ var scrollInAction = false;
 var params = {  name : localStorage.getItem("name"),
                 mobile : localStorage.getItem("mobile"),
                 college_id : localStorage.getItem("college_id") };
-
+var search_term;
 $(window).scroll(function() {
 
-  if ($('#listings-container').height() - $(window).scrollTop() < 700) {
+  if ($('#listings-container').height() - $(window).scrollTop() < 600) {
     if (scrollInAction) return false;
+    scrollInAction = true;
     var isActive = $('a#listings').hasClass('active');
-    
     if (isActive) {
       renderPreloader($('#listings-container'), true)
-      scrollInAction = true;
+      search_term    = $('#search').val();
+
       params['page'] = page+1;
+      if (search_term.length > 4) { params['q'] = search_term };
       console.log(params);
       $.ajax({
         url   : 'http://backend.pajamadeals.in/listings',
