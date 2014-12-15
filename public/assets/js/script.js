@@ -165,6 +165,7 @@ $(document).ready(function() {
     $('.search-input').blur().addClass('hidden').val('');
     $('nav .brand-logo').html('pajamadeals');
     $('.search-close').removeClass('search-close').addClass('search').find('i').removeClass().addClass('mdi-action-search');
+    app.listingsView.render({refresh : false});
   };
 
 
@@ -176,7 +177,6 @@ $(document).ready(function() {
   $('.nav-wrapper').on('click', '.search-close', function(e) {
     e.preventDefault();
     blur_search();
-    app.router.trigger('route:home');
   });
 
  

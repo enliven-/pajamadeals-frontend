@@ -10,12 +10,12 @@ var Router = Backbone.Router.extend({
 });
 var params        = { mobile : localStorage.getItem('mobile')}
 app.router        = new Router;
-var ordersView    = new app.OrdersView(params);
-var listingsView  = new app.ListingsView();
+app.ordersView    = new app.OrdersView(params);
+app.listingsView  = new app.ListingsView();
 
 
 // initialize
-listingsView.render({ refresh : true });
+app.listingsView.render({ refresh : true });
 // listingsView.renderForm();
 
 app.router
@@ -26,6 +26,6 @@ app.router
   })
 
   .on('route:orders', function(params) {
-    ordersView.render();
+    app.ordersView.render();
   });
 Backbone.history.start();
