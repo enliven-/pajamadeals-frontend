@@ -131,20 +131,21 @@
 <script>
 $(document).ready(function() {
 
+  var oldname, oldmob, college_id;
 
-  var oldname = localStorage.getItem("name" );
-  var oldmob  = localStorage.getItem("mobile" );
-  var college_id = localStorage.getItem("college_id");
+  oldname = localStorage.getItem("name" );
+  oldmob  = localStorage.getItem("mobile" );
+  college_id = localStorage.getItem("college_id");
 
-  if (oldname != null || oldname.length > 4) {
+  if (oldname != null && oldname.length > 4) {
     $("#name + label").addClass("active");
     $('#name').val( oldname );
   }
-  if (oldmob != null || oldmob.length === 10) {
+  if (oldmob != null && oldmob.length === 10) {
     $("#mobile + label").addClass("active");
     $('#mobile').val( oldmob );
   } 
-  if (college_id!=null || college_id!=undefined) {
+  if (college_id!=null && college_id!=undefined) {
     $('select#college').val( college_id );
   } 
 
