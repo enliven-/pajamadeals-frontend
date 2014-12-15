@@ -1,7 +1,8 @@
 var app   = app || {};
 
 app.Order = Backbone.Model.extend({
-  urlRoot  :  'http://backend.pajamadeals.in/orders',
+  // urlRoot  :  'http://backend.pajamadeals.in/orders',
+  urlRoot  : $.host + '/orders',
   listing  : null,
 
   initialize : function() {
