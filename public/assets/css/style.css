@@ -113,3 +113,14 @@ span.heart {
   margin-top: 5px;
 }
 
+
+/* ---------------  listing.mst ----------------- */
+
+div.card > div.footer .buy {
+  margin-left: 20px;
+}
+
+/* ---------------  order.mst ----------------- */
+div.card > div.footer .cancel {
+  margin-left: 20px;
+}

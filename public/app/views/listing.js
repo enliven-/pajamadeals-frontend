@@ -15,6 +15,8 @@ app.ListingView = Backbone.View.extend({
 
   render: function() {
     var that = this;
+    var image_url = that.model.toJSON()['image']['thumb'];
+    that.model.set('image_url', image_url);
     console.log(that.model.toJSON())
     $.get('/partials/listing.mst', function(template) {
       var rendered = Mustache.render(template, that.model.toJSON() );

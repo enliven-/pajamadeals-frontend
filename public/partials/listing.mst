@@ -1,7 +1,9 @@
 <div class="card">
   <div class="row">
     <div style="padding: 20px 0 10px 10px;" class="card-image col s3">
-      <img style="height: 70px; width: 60px;" src="assets/images/book1.jpg">
+      {{! <img style="height: 70px; width: 60px;" src="assets/images/book1.jpg"> }}
+      <img style="height: 70px; width: 60px;" src="{{image_url}}">
+
     </div>
     <div style="padding-left: 0px; padding-bottom: 0px;" class="card-content col s9">
       <span style="font-size: 16px; font-weight: 500; color: gray;"class="title">{{ title }}</span> <br>
@@ -12,7 +14,7 @@
       <span class="markings">{{ markings }}</span> <br>
     </div>
   </div>
-  <div class="row">
+  <div class="row footer">
     <div style="padding-left: 20px;" class="col s8">
       Rs <span style="text-decoration: line-through;" class="mrp"> {{ mrp }}</span><br>
       <span style="color: red;" class="price">  Rs {{ price }}</span>
