@@ -3,39 +3,56 @@ var app = app || {};
 
 app.ListingsView = Backbone.View.extend({
 
-  el              : $('body'),
+  tagName       : 'div',
+  className     : 'listings',
+  target_sel    : '#listings-container',
+
   events          : {
                       'click .create' : 'createListing'
                     },
 
-  initialize : function(models) {
-    this.collection = new app.Listings(models);
-    var that = this;
-    this.collection.fetch({
-      success: function(response) { app.listings = that.collection; },
-      error  : function(response) { toast('Error loading listings', '3000');  }
-    });
-  },
-  
 
-  render : function(options) {
-    $('#listings-container').html('');
-    // renderPreloader($('#listings-container'));
-    var refreshFlag = options.refresh;
-    if (refreshFlag) { 
+
+  initialize : function(models, options) {
+    if ( ! $.isEmptyObject(models) ) {
+      this.collection = new app.Listings(models);
+    } else {
+      this.options    = options || {};
       this.collection = new app.Listings();
       var that = this;
       this.collection.fetch({
-        success: function(response) { app.listings = that.collection; that.renderListings(); },
-        error  : function(response) { toast('Error loading listings', '3000'); }
+        traditional   : true,
+        data          : this.options,
+        success: function(response) {  },
+        error  : function(response) { toast('Error loading listings', '3000');  }
       });
-    } else {
-      this.renderListings();
     }
   },
+  
+  render : function(options) {
 
-  renderListings : function(collection) {
-    removePreloader( $('#listings-container') );
+    var refreshFlag = options.refresh;
+    var appendFlag  = options.append;
+
+    var that = this;
+    if (refreshFlag) {
+      renderPreloader( $(this.target_sel) );
+      this.collection.fetch({
+        traditional   : true,
+        data          : this.options,
+        success: function(response) { that.renderListings(appendFlag); },
+        error  : function(response) { toast('Error loading listings', '3000');  }
+      });
+    } else {
+      this.renderListings(appendFlag);
+    }
+    
+  },
+
+  renderListings : function(appendFlag) {
+    if (!appendFlag) { $(this.target_sel).html(''); }
+    
+    removePreloader( $(this.target_sel) );
     this.collection.each(function(item) { 
       this.renderListing(item);
     }, this );
@@ -43,7 +60,7 @@ app.ListingsView = Backbone.View.extend({
 
   renderListing: function( item ) {
     var listingView = new app.ListingView({ model: item });
-    $('#listings-container').append( listingView.render().el );
+    $(this.target_sel).append( listingView.render().el );
   },
 
   renderForm: function(options) {

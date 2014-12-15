@@ -15,6 +15,7 @@ app.ListingView = Backbone.View.extend({
 
   render: function() {
     var that = this;
+    console.log(that.model.toJSON())
     $.get('/partials/listing.mst', function(template) {
       var rendered = Mustache.render(template, that.model.toJSON() );
       that.$el.html( rendered );

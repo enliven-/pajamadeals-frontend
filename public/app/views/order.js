@@ -13,7 +13,6 @@ app.OrderView = Backbone.View.extend({
     var template = $('#order-template').html();
     var listing  = this.model.toJSON().listing;
     var context = $.extend({}, listing,  this.model.toJSON());
-    console.log(context)
     var rendered = Mustache.render(template, context);
     this.$el.html( rendered );
     if (context.status === 'cancelled') { this.$el.find('a').addClass('disabled'); }

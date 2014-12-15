@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+  var refreshListingsFlag = false;
+
   $('.button-collapse').sideNav({menuWidth: 240, activationWidth: 70});
   $('ul.tabs').tabs();
 
@@ -87,13 +89,14 @@ $(document).ready(function() {
                     $.ajax({
                       // url       : $.host + '/listings?q='+term,
                       url       : 'http://backend.pajamadeals.in/listings?q='+term,
+                      data      : app.params,
                       dataType  : 'json',
                       success   : function(response) {
                                     // var results = _.filter(response, function(item) { return item.title.toLowerCase().indexOf(term) != -1; } );
                                     results = response;
-                                    var filteredView = new app.ListingsView(results);
+                                    var filteredView = new app.ListingsView(results, {});
                                     $('#listings-container').html('');
-                                    filteredView.renderListings();
+                                    filteredView.render({refresh: false});
                                   },
                       error     : function(response) { console.log('error in autocomplete'); }
                     });
@@ -120,6 +123,7 @@ $(document).ready(function() {
                     $.ajax({
                       // url       : $.host + '/books?q='+term,
                       url       : 'http://backend.pajamadeals.in/books?q='+term,
+                      data      : app.params,
                       dataType  : 'json',
                       success   : function(response) {
                                     var results = _.filter(response, function(item) { return item.title.toLowerCase().indexOf(term) != -1; } );
@@ -158,6 +162,7 @@ $(document).ready(function() {
     $('.brand-logo').html('');
     $('.search-input').removeClass('hidden').focus();
     $('.search').removeClass('search').addClass('search-close').find('i').removeClass().addClass('mdi-navigation-close');
+    refreshListingsFlag = true;
   };
 
   var blur_search  = function() {
@@ -165,7 +170,10 @@ $(document).ready(function() {
     $('.search-input').blur().addClass('hidden').val('');
     $('nav .brand-logo').html('pajamadeals');
     $('.search-close').removeClass('search-close').addClass('search').find('i').removeClass().addClass('mdi-action-search');
-    app.listingsView.render({refresh : false});
+    if (refreshListingsFlag) { 
+      app.listingsView.render({refresh : false});
+      refreshListingsFlag = false;
+    }
   };
 
 

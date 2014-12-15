@@ -6,9 +6,8 @@ app.OrdersView = Backbone.View.extend({
   tagName       : 'div',
   className     : 'orders',
   target_sel    : '#orders-container',
-  flag          : false,
 
-  initialize : function(options) {
+  initialize : function(models, options) {
     this.collection = new app.Orders();
     this.options    = options || {};
     var that = this;
@@ -47,7 +46,6 @@ app.OrdersView = Backbone.View.extend({
     this.collection.each(function(item) { 
       this.renderOrder(item);
     }, this );
-    console.log( )
   },
 
   renderOrder: function( item ) {
