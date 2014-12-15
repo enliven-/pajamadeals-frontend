@@ -73,8 +73,11 @@ app.ListingsView = Backbone.View.extend({
   },
 
   createListing : function() {
+    console.log('sssss')
     $('input.disable').removeAttr('disabled');
-    var data      = this.$el.find('form.listing').serializeObject();
+    // hack!!
+    // var data      = this.$el.find('form.listing').serializeObject();
+    var data = $('body').find('form.listing').serializeObject();
     console.log(data);
     delete data.title
     delete data.authors

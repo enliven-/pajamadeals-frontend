@@ -204,4 +204,11 @@ $(document).ready(function() {
     $('#title').removeAttr('disabled').focus();
   });
 
+  $('body').on('click', '#form-container .create', function(e) {
+    e.preventDefault();
+    console.log('yes!')
+    // hack!!
+    app.listingsView.createListing();
+  });
+
 });
