@@ -3,6 +3,10 @@ $(document).ready(function() {
   $('.button-collapse').sideNav({menuWidth: 240, activationWidth: 70});
   $('ul.tabs').tabs();
 
+  $('body').on('click', '.nav-logo > a', function(e) {
+    e.preventDefault();
+    window.location = window.location.origin;
+  });
 
   $('#listings').on('click', function(e) {
     console.log('listings!')
@@ -37,6 +41,11 @@ $(document).ready(function() {
     $('#sidenav-overlay').remove();
   });
 
+  $('#nav-user').on('click', function(e){
+    e.preventDefault();
+    $('#nav-mobile').animate( { "left": "-=240px" }, "slow");
+    $('#sidenav-overlay').remove();
+  });
 
   $('body').on('click', 'ul.tabs a', function(e) {
     blur_search();

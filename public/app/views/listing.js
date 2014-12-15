@@ -15,6 +15,7 @@ app.ListingView = Backbone.View.extend({
 
   render: function() {
     var that = this;
+    console.log(that.model.toJSON())
     $.get('/partials/listing.mst', function(template) {
       var rendered = Mustache.render(template, that.model.toJSON() );
       that.$el.html( rendered );
@@ -23,9 +24,7 @@ app.ListingView = Backbone.View.extend({
   },
 
   placeOrder : function() {
-    setTimeout(function(){ toast('Processing order.'); }, 500);
-	console.log( localStorage.getItem('name') )
-	return false;
+    setTimeout(function(){ toast('Processing order.', '3000'); }, 500);
     var data  = {
                   listing_id : this.model.id,
                   buyer_attributes : { name : localStorage.getItem('name'), mobile : localStorage.getItem('mobile'), college_id : 30 }
@@ -39,7 +38,6 @@ app.ListingView = Backbone.View.extend({
                   Backbone.trigger('order:placed');
                 },
       error   : function(m, r, o) {
-                  console.log(m); console.log(r);
                   toast('Error placing order.', '3000');
                 }
     });

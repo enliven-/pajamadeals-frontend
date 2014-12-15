@@ -123,12 +123,26 @@
 
 <script>
 $(document).ready(function() {
+
+
+  var oldname = localStorage.getItem("name" );
+  var oldmob  = localStorage.getItem("mobile" );
+
+  if (oldname.length > 4) {
+    $("#name + label").addClass("active");
+    $('#name').val( oldname );
+  }
+  if (oldmob.length === 10) {
+    $("#mobile + label").addClass("active");
+    $('#mobile').val( oldmob );
+  } 
+
   $('body').on('click', '.go', function(e) {
     e.preventDefault();
     var name        = $('#name').val();
     var mobile      = $('#mobile').val();
     // var college_id  = $('select').options[$('select').selectedIndex].value;
-    var college_id = 3;
+    var college_id = 30;
     console.log(name);
     console.log(mobile);
     console.log(college_id);
@@ -144,7 +158,7 @@ $(document).ready(function() {
       return false;
     }
 
-    if (college_id < 0 || college_id > 3) {
+    if (college_id < 0 || college_id > 35) {
       toast('Please select a college', '2000');
       return false;
     }

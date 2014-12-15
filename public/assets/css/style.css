@@ -57,9 +57,12 @@ input#search:focus {
   -webkit-box-shadow: 1px solid #bdbdbd !important;
   height: 3.5rem;
 }
-#listings-container {
-  /*margin-top: -20px;*/
+
+
+.listings {
+
 }
+
 nav .brand-logo {
   width: auto;
   margin-left: 22%; 

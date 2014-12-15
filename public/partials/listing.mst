@@ -1,6 +1,6 @@
 <div class="card">
   <div class="row">
-    <div style="padding: 20px 0 10px 20px;" class="card-image col s3">
+    <div style="padding: 20px 0 10px 10px;" class="card-image col s3">
       <img style="height: 70px; width: 60px;" src="assets/images/book1.jpg">
     </div>
     <div style="padding-left: 0px; padding-bottom: 0px;" class="card-content col s9">
@@ -13,7 +13,7 @@
     </div>
   </div>
   <div class="row">
-    <div style="padding-left: 20px;" class="col s9">
+    <div style="padding-left: 20px;" class="col s8">
       Rs <span style="text-decoration: line-through;" class="mrp"> {{ mrp }}</span><br>
       <span style="color: red;" class="price">  Rs {{ price }}</span>
     </div>
