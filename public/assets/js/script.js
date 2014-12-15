@@ -143,6 +143,7 @@ $(document).ready(function() {
 
   var populateAndShowForm = function(book) {
     $('#title').val(book.title);
+    $('input.book-id').val(book.id);
     $('#authors').val(book.authors);
     $('#publication').val(book.publication);
     $('#sug-price').val(300);
