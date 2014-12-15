@@ -9,8 +9,6 @@ var Router = Backbone.Router.extend({
   }
 });
 var params        = { mobile : localStorage.getItem('mobile')}
-
-
 app.router        = new Router;
 var ordersView    = new app.OrdersView(params);
 var listingsView  = new app.ListingsView();

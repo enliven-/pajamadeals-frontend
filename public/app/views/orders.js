@@ -26,7 +26,7 @@ app.OrdersView = Backbone.View.extend({
     // $(this.target_sel).html( this.el );
     renderPreloader( $(this.target_sel) );
     this.renderOrders();
-    $(this.target_sel).html()
+    // $(this.target_sel).html()
   },
 
   updateOrders : function() {
