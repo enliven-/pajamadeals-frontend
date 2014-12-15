@@ -2,12 +2,7 @@ var app   = app || {};
 
 app.Order = Backbone.Model.extend({
   urlRoot  :  'http://backend.pajamadeals.in/orders',
-  listing  : null,
-
-  initialize : function() {
-    this.loadListing();
-    console.log('listing loaded')
-  },
+  // urlRoot  : $.host + '/orders',
 
   cancel   :  function(options) {
                 var success_fn = options.success;
@@ -21,17 +16,4 @@ app.Order = Backbone.Model.extend({
                   error   : function(r) { error_fn(); }
                 });
               },
-
-  loadListing : function() {
-    var that = this;
-    $.ajax({
-      // url      : 'http://localhost:9393/listings',
-      url      : 'http://backend.pajamadeals.in/listings',
-      dataType : 'json',
-      success  : function(response) { 
-                  that.listing = _.find(response, function(item) { return item.id === that.toJSON().listing_id });
-                 },
-      error    : function(r) { console.log('error loadListing'); }
-    })
-  }
 });
