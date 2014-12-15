@@ -19,6 +19,7 @@ app.ListingsView = Backbone.View.extend({
   
 
   render : function(options) {
+    $('#listings-container').html('');
     // renderPreloader($('#listings-container'));
     var refreshFlag = options.refresh;
     if (refreshFlag) { 
@@ -34,7 +35,7 @@ app.ListingsView = Backbone.View.extend({
   },
 
   renderListings : function(collection) {
-    $('#listings-container').html('');
+    removePreloader( $('#listings-container') );
     this.collection.each(function(item) { 
       this.renderListing(item);
     }, this );
@@ -49,6 +50,7 @@ app.ListingsView = Backbone.View.extend({
     var target = options.target_sel;
     $.get('/partials/listing-form.mst', function(template) {
       var rendered = Mustache.render(template);
+      $('#form-container').html('');
       $('#form-container').html(rendered);
     });
   },

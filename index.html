@@ -43,37 +43,38 @@
       <h5 class="header col s12 light center">buy and sell used textbooks on campus!</h5>
     </div>
 
+
+    <div class="row center">
+      <div class="input-field col s12">
+        <input id="name" type="text" required>
+        <label for="name" class="grey-text darken-3">Name</label>
+      </div>
+    </div>
+
+    <div class="row center">
+      <div class="input-field col s12">
+        <input id="mobile" type="text" required>
+        <label for="mobile" class="grey-text darken-3">Mobile</label>
+      </div>
+    </div>
+
+
     <div class="row center">
       <div id="select-college" class="section scrollspy s12">
 
         <div class="row">
           <div class="input-field col s12">
-            <select class="grey-text darken-3">
+            <select class="grey-text darken-3" id="college">
               <option value="" disabled selected>Select your College</option>
-              <option value="1">Vishwakarma Institute of Technology</option>
-              <option value="2">Cummins College of Engineering</option>
-              <option value="3">Maharashtra Institute of Technology</option>
+              <option value=1>Vishwakarma Institute of Technology</option>
+              <option value=2>Cummins College of Engineering</option>
+              <option value=3>Maharashtra Institute of Technology</option>
             </select>
           </div>
         </div>
 
       </div>
     </div>
-
-
-    <div class="row center">
-      <div id="select-department" class="section scrollspy">
-
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="department" type="text" required>
-            <label for="department" class="grey-text darken-3">Department</label>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
 
 
     <div class="row center">
@@ -95,13 +96,13 @@
 
 
 <script type="text/javascript" src="assets/js/jquery.min.js"></script>
-<script type="text/javascript" src="assets/js/underscore.min.js"></script>
+<!-- <script type="text/javascript" src="assets/js/underscore.min.js"></script>
 <script type="text/javascript" src="assets/js/mustache.min.js"></script>
 <script type="text/javascript" src="assets/js/backbone.min.js"></script>
-<script type="text/javascript" src="assets/js/helpers.js"></script>
+<script type="text/javascript" src="assets/js/helpers.js"></script> -->
 <script type="text/javascript" src="assets/materialize/js/materialize.min.js"></script>
 
-<script type="text/javascript" src="app/app.js"></script>
+<!-- <script type="text/javascript" src="app/app.js"></script>
 
 <script type="text/javascript" src="app/models/book.js"></script>
 <script type="text/javascript" src="app/models/listing.js"></script>
@@ -115,19 +116,41 @@
 <script type="text/javascript" src="app/views/order.js"></script>
 <script type="text/javascript" src="app/views/listings.js"></script>
 <script type="text/javascript" src="app/views/orders.js"></script>
-<script type="text/javascript" src="app/routes.js"></script>
+<script type="text/javascript" src="app/routes.js"></script> -->
 
 
 
 
 <script>
 $(document).ready(function() {
-  $('.button-collapse').sideNav({menuWidth: 240, activationWidth: 70});
-  $('ul.tabs').tabs();
+  $('body').on('click', '.go', function(e) {
+    e.preventDefault();
+    var name        = $('#name').val();
+    var mobile      = $('#mobile').val();
+    // var college_id  = $('select').options[$('select').selectedIndex].value;
+    var college_id = 3;
+    console.log(name);
+    console.log(mobile);
+    console.log(college_id);
+    localStorage.setItem("name", name);
+    localStorage.setItem("mobile", mobile);
+    localStorage.setItem("college", college_id);
+    if (name.length < 5 ) {
+      toast('Please enter your full name', '2000');
+      return false;
+    } 
+    if (mobile.length < 10 || !(/^\d+$/.test(mobile)) ) {
+      toast('Please enter your valid mobile', '2000');
+      return false;
+    }
 
-  $('#orders').on('click', function(e) {
-    app.router.trigger('route:orders')
+    if (college_id < 0 || college_id > 3) {
+      toast('Please select a college', '2000');
+      return false;
+    }
+    window.location = window.location + 'home.html'
   });
+
 });
 </script>
 </body>

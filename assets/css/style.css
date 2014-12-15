@@ -1,0 +1,100 @@
+.hidden {
+  display: none;
+}
+.card-image {
+  padding: 10px 5px 10px 5px;
+}
+input, textarea {
+  max-width:100%
+}
+.ui-helper-hidden-accessible {
+  display: none;
+}
+.ui-autocomplete.ui-menu {
+  width: 300px;
+}
+.order {
+  border-bottom: 1px solid gray;
+}
+.input-field input[type=text]:valid {
+  border-bottom: none;
+  box-shadow: 1px solid #bdbdbd;
+  -webkit-box-shadow: 1px solid #bdbdbd;
+}
+.input-field textarea:valid {
+  border-bottom: none;
+  box-shadow: 1px solid #bdbdbd;
+  -webkit-box-shadow: 1px solid #bdbdbd;
+}
+
+.tabs-wrapper + .container {
+  margin: auto;
+  width: 95%;
+  padding: 0px;
+}
+
+.card {
+  box-shadow: none;
+  margin-top: 0px;
+  -webkit-box-shadow: none;
+  border-bottom: 1px solid lightgray;
+}
+.card > .row {
+  margin-bottom: 0px;
+}
+.mdi-action-search, .mdi-navigation-close, nav a.button-collapse i {
+  font-size: 2.0rem;
+}
+input#search {
+  margin-bottom: 0px;
+  margin-left: 15px;
+  height: 3.5rem;
+  line-height: 1em;
+}
+input#search:focus {
+  border-bottom: none;
+  box-shadow: 1px solid #bdbdbd !important;
+  -webkit-box-shadow: 1px solid #bdbdbd !important;
+  height: 3.5rem;
+}
+#listings-container {
+  /*margin-top: -20px;*/
+}
+nav .brand-logo {
+  width: auto;
+  margin-left: 22%; 
+}
+
+ul#nav-mobile.side-nav {
+  background-color: #3c3933;
+}
+
+.nav-logo {
+ background-color: #ee6e73;
+}
+.nav-logo > a {
+ font-size: 1.5rem !important;
+}
+
+ul#nav-mobile.side-nav > li:not(:first-child) {
+  line-height: 45px;
+}
+ul#nav-mobile.side-nav > li {
+  border-bottom: 1px solid #57544e;
+}
+ul#nav-mobile.side-nav > li > a {
+  color: white;
+  font-size: 1.2rem;
+}
+
+#form-container > .scrollspy > .row:first-child {
+  margin-bottom: 0px;
+}
+
+#toast-container {
+  margin-bottom: 20px;
+}
+#toast-container > .toast {
+  width: 95% !important;
+  margin: auto;
+}

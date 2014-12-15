@@ -3,11 +3,12 @@ var Router = Backbone.Router.extend({
     'listings'        : 'home',
     'new'             : 'new',
     ':id/edit'        : 'edit',
-    'orders/:refresh' : 'orders',
+    'orders'          : 'orders',
+    'user'            : 'user',
     ''                : 'home',
   }
 });
-var params        = { mobile : '9975454384'}
+var params        = { mobile : localStorage.getItem('mobile')}
 
 
 app.router        = new Router;
@@ -30,4 +31,7 @@ app.router
     ordersView.render();
   });
 
+  .on('route:user', function(params) {
+
+  });
 Backbone.history.start();

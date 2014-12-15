@@ -26,7 +26,7 @@ app.ListingView = Backbone.View.extend({
     setTimeout(function(){ toast('Processing order.'); }, 500);
     var data  = {
                   listing_id : this.model.id,
-                  buyer_attributes : { name : 'Bhushan Lodha', mobile : '9975454384', college_id : 30 }
+                  buyer_attributes : { name : localStorage.getItem('name'), mobile : localStorage.getItem('mobile'), college_id : 30 }
                 };
     var order = new app.Order();
 
