@@ -67,15 +67,15 @@ $(window).scroll(function() {
 
   if ($('#listings-container').height() - $(window).scrollTop() < 600) {
     if (scrollInAction) return false;
-    scrollInAction = true;
     var isActive = $('a#listings').hasClass('active');
     if (isActive) {
+      scrollInAction = true;
       renderPreloader($('#listings-container'), true)
       search_term    = $('#search').val();
 
       params         = getAppParams();
       params['page'] = page + 1;
-      params['q']    = search_term;
+      if (search_term.length > 4) { params['q'] = search_term; }
 
       console.log(params);
 
