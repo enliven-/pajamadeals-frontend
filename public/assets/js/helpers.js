@@ -52,26 +52,30 @@ var removePreloader = function($target) {
 var page = 1;
 
 
-// var scrollInAction = false;
-// $(window).scroll(function() {
-//
-//   if ($('#listings-container').height() - $(window).scrollTop() < 700) {
-//     if (scrollInAction) return false;
-//     renderPreloader($('#listings-container'), true)
-//     scrollInAction = true;
-//     $.ajax({
-//       url   : 'http://backend.pajamadeals.in/listings',
-//       data  : {page : page+1 },
-//       success : function(data) {
-//         var listings = data;
-//         var listingsView = new app.ListingsView(data);
-//         listingsView.renderListings();
-//         page+=1;
-//         scrollInAction = false;
-//       },
-//       error : function(data) { console.log(data); }
-//     })
-//   }
-// });
+var scrollInAction = false;
+$(window).scroll(function() {
+
+  if ($('#listings-container').height() - $(window).scrollTop() < 700) {
+    if (scrollInAction) return false;
+    var isActive = $('a#listings').hasClass('active');
+    if (isActive) {
+      renderPreloader($('#listings-container'), true)
+      scrollInAction = true;
+      $.ajax({
+        url   : 'http://backend.pajamadeals.in/listings',
+        data  : {page : page+1 },
+        success : function(data) {
+          var listings = data;
+          var listingsView = new app.ListingsView(data);
+          listingsView.renderListings();
+          page+=1;
+          scrollInAction = false;
+        },
+        error : function(data) { console.log(data); }
+      })
+    }
+
+  }
+});
 
 
