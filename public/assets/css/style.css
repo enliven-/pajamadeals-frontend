@@ -125,6 +125,6 @@ span.condition, span.markings {
 }
 
 /* ---------------  order.mst ----------------- */
-div.card > div.footer .cancel {
-  /*margin-left: 20px;*/
+div.order > div.card > div.footer a.cancel {
+  margin-top: 10px;
 }

@@ -299,7 +299,7 @@
 <script type="text/template" id="order-template">
 <div class="card">
   <div class="row">
-    <div style="padding: 20px 0 10px 20px;" class="card-image col s3">
+    <div style="padding: 20px 0 10px 10px;" class="card-image col s3">
       <img style="height: 70px; width: 60px;" src="assets/images/book1.jpg">
     </div>
     <div style="padding-left: 0px; padding-bottom: 0px;" class="card-content col s9">
@@ -307,16 +307,17 @@
       <span class="vol">{{ vol }}</span>
       <span style="font-weight: 300;" class="authors">{{ authors }}</span> <br>
       <span style="font-weight: 200; font-size: 13px; font-style: italic;" class="publication">{{ publication }}</span> <br>
-      <span class="condition">{{ condition }}</span>
-      <span class="markings">{{ markings }}</span> <br>
-      <span class="status">{{ status }}</span> <br>
-
+      <span class="condition">{{ quality }} & </span>
+      <span class="markings"> {{ markings }}</span> <br>
     </div>
   </div>
   <div class="row footer">
-    <div style="padding-left: 20px;" class="col s7">
+    <div style="padding-left: 20px;" class="col s3">
       Rs <span style="text-decoration: line-through;" class="mrp"> {{ mrp }}</span><br>
       <span style="color: red;" class="price">  Rs {{ price }}</span>
+    </div>
+    <div class="col s4">
+      <span class="status" style="display: inline-block; margin-top: 20px;">{{ status }}</span>
     </div>
     <div class="col s3">
       <a class="waves-effect waves-light btn white-text cancel {{status}}">Cancel</a>
