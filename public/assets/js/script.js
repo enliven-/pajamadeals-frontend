@@ -86,6 +86,7 @@ $(document).ready(function() {
     source      : function(req, resp_fn) {
                     var term = req.term.toLowerCase();
                     console.log(term)
+                    console.log(app.params);
                     $.ajax({
                       // url       : $.host + '/listings?q='+term,
                       url       : 'http://backend.pajamadeals.in/listings?q='+term,

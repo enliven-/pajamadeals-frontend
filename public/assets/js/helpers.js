@@ -49,12 +49,20 @@ var removePreloader = function($target) {
 }
 
 
+var getAppParams = function() {
+  var paramscopy = jQuery.extend({}, app.params);
+  return paramscopy;
+}
+
 var page = 1;
 var scrollInAction = false;
-var params = {  name : localStorage.getItem("name"),
-                mobile : localStorage.getItem("mobile"),
-                college_id : localStorage.getItem("college_id") };
-var search_term;
+var params, search_term;
+
+
+// var params = {  name : localStorage.getItem("name"),
+//                 mobile : localStorage.getItem("mobile"),
+//                 college_id : localStorage.getItem("college_id") };
+
 $(window).scroll(function() {
 
   if ($('#listings-container').height() - $(window).scrollTop() < 600) {
@@ -65,9 +73,12 @@ $(window).scroll(function() {
       renderPreloader($('#listings-container'), true)
       search_term    = $('#search').val();
 
-      params['page'] = page+1;
-      if (search_term.length > 4) { params['q'] = search_term };
+      params         = getAppParams();
+      params['page'] = page + 1;
+      params['q']    = search_term;
+
       console.log(params);
+
       $.ajax({
         url   : 'http://backend.pajamadeals.in/listings',
         data  : params,
