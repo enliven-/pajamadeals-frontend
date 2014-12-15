@@ -1,8 +1,8 @@
 var app   = app || {};
 
 app.Order = Backbone.Model.extend({
-  urlRoot  :  'http://backend.pajamadeals.in/orders',
-  // urlRoot  : $.host + '/orders',
+  // urlRoot  :  'http://backend.pajamadeals.in/orders',
+  urlRoot  : $.host + '/orders',
 
   cancel   :  function(options) {
                 var success_fn = options.success;

@@ -72,9 +72,10 @@
           <div class="input-field col s12">
             <select class="grey-text darken-3 disabled" id="college">
               <!-- <option value="" disabled selected>Select your College</option> -->
-              <option value="1">Vishwakarma Institute of Technology</option>
-              <option value="2">Cummins College of Engineering</option>
-              <option value="3">Maharashtra Institute of Technology</option>
+              <option value="37">Vishwakarma Institute of Technology</option>
+              <option value="30">Cummins College of Engineering</option>
+              <option value="32">Maharashtra Institute of Technology</option>
+              <option value="36">MIT College of Engineering</option>
             </select>
           </div>
         </div>
@@ -135,11 +136,11 @@ $(document).ready(function() {
   var oldmob  = localStorage.getItem("mobile" );
   var college_id = localStorage.getItem("college_id");
 
-  if (oldname.length > 4) {
+  if (oldname != null || oldname.length > 4) {
     $("#name + label").addClass("active");
     $('#name').val( oldname );
   }
-  if (oldmob.length === 10) {
+  if (oldmob != null || oldmob.length === 10) {
     $("#mobile + label").addClass("active");
     $('#mobile').val( oldmob );
   } 
@@ -156,11 +157,7 @@ $(document).ready(function() {
     console.log(name);
     console.log(mobile);
     console.log(college_id);
-    // return false;
 
-    localStorage.setItem("name", name);
-    localStorage.setItem("mobile", mobile);
-    localStorage.setItem("college_id", college_id);
     if (name.length < 5 ) {
       toast('Please enter your full name', '2000');
       return false;
@@ -170,10 +167,19 @@ $(document).ready(function() {
       return false;
     }
 
-    if (college_id < 0 || college_id > 35) {
+    if (college_id < 0 || college_id > 40) {
       toast('Please select a college', '2000');
       return false;
     }
+
+    localStorage.setItem("name", name);
+    localStorage.setItem("mobile", mobile);
+    localStorage.setItem("college_id", college_id);
+
+    console.log( localStorage.getItem("name" ) )
+    console.log( localStorage.getItem("mobile") )
+    console.log( localStorage.getItem("college_id") )
+// return false;
     window.location = window.location + 'home.html'
   });
 

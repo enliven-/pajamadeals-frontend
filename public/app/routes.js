@@ -27,9 +27,5 @@ app.router
 
   .on('route:orders', function(params) {
     ordersView.render();
-  })
-
-  .on('route:user', function(params) {
-
   });
 Backbone.history.start();

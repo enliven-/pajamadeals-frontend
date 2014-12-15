@@ -12,10 +12,11 @@ app.OrdersView = Backbone.View.extend({
     this.collection = new app.Orders();
     this.options    = options || {};
     var that = this;
+    console.log(options)
     this.collection.fetch({
       traditional   : true,
       data          : this.options,
-      success: function(response) { that.renderOrders(); },
+      success: function(response) { console.log('fetced orders'); console.log(response); that.renderOrders(); },
       error  : function(response) { toast('Error loading orders', '3000'); }
     });
 
@@ -24,12 +25,13 @@ app.OrdersView = Backbone.View.extend({
 
   render : function() {
     // $(this.target_sel).html( this.el );
+    console.log(this.collection.length)
     renderPreloader( $(this.target_sel) );
     this.renderOrders();
-    // $(this.target_sel).html()
   },
 
   updateOrders : function() {
+    console.log('update orders')
     var that = this;
     this.collection.fetch({
       traditional   : true,
@@ -45,6 +47,7 @@ app.OrdersView = Backbone.View.extend({
     this.collection.each(function(item) { 
       this.renderOrder(item);
     }, this );
+    console.log( )
   },
 
   renderOrder: function( item ) {

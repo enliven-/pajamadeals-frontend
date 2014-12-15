@@ -70,7 +70,7 @@ app.ListingsView = Backbone.View.extend({
     setTimeout(function() { toast('Processing your listing', '3000'); }, 500);
     this.collection.create( listing.attributes, {
       success : function() { toast('Your listing has been created!', '3000'); $('#listings').click(); },
-      error   : function() { toast('Error creating listing'); }
+      error   : function() { toast('Error creating listing', '3000'); }
     } );
     
   },
