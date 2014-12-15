@@ -117,10 +117,14 @@ span.heart {
 /* ---------------  listing.mst ----------------- */
 
 div.card > div.footer .buy {
-  margin-left: 20px;
+  /*margin-left: 20px;*/
+}
+
+span.condition, span.markings {
+  color: grey;
 }
 
 /* ---------------  order.mst ----------------- */
 div.card > div.footer .cancel {
-  margin-left: 20px;
+  /*margin-left: 20px;*/
 }

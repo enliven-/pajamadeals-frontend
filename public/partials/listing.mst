@@ -10,14 +10,16 @@
       <span class="vol">{{ vol }}</span>
       <span style="font-weight: 300;" class="authors">{{ authors }}</span> <br>
       <span style="font-weight: 200; font-size: 13px; font-style: italic;" class="publication">{{ publication }}</span> <br>
-      <span class="condition">{{ quality }}</span> <br>
-      <span class="markings">{{ markings }}</span> <br>
     </div>
   </div>
   <div class="row footer">
-    <div style="padding-left: 20px;" class="col s8">
+    <div style="padding-left: 20px;" class="col s3">
       Rs <span style="text-decoration: line-through;" class="mrp"> {{ mrp }}</span><br>
       <span style="color: red;" class="price">  Rs {{ price }}</span>
+    </div>
+    <div class="col s5">
+      <span class="condition">{{ quality }} & </span> <br>
+      <span class="markings"> {{ markings }}</span> <br>
     </div>
     <div class="col s3">
       <a class="waves-effect waves-light btn white-text buy">Buy</a>
