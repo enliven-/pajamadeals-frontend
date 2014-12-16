@@ -145,13 +145,48 @@ $(document).ready(function() {
   });
 
 
+  var suggestedPrice;
+  
+  var calculateSuggestedPrice = function(mrp, condition, markings) {
+    if (mrp > 0 && condition >=0 && markings >= 0) {
+      return Math.round( mrp*(60.0 - (3*condition) - (3*markings) )/100 )
+    } else {
+      return '-'
+    }
+  };
+
+  $('body').on('keyup', '#mrp', function(e){
+    updateSugPrice();
+  });
+
+  $('body').on('click', 'form input:radio', function(e){
+    updateSugPrice();
+  });
+
+  var updateSugPrice = function() {
+    var mrp = $('#mrp').val();
+    var q   = $('input:radio[name=quality]:checked').val();
+    var m   = $('input:radio[name=markings]:checked').val();
+    if(q==='like new') { q = 0; }
+    if(q==='fair') { q = 1; }
+    if(q==='heavily used') { q = 2; }
+    if(m==='no markings') { m = 0; }
+    if(m==='few markings') { m = 1; }
+    if(m==='heavily marked') { m = 2; }
+    var sp  = calculateSuggestedPrice(mrp, q, m);
+    $('#sug-price').val(sp);
+  };
+
+  $('body').on('keypress', '.numeric', function(e){
+    if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) { return false; }
+  })
 
   var populateAndShowForm = function(book) {
     $('#title').val(book.title);
     $('input.book-id').val(book.id);
     $('#authors').val(book.authors);
     $('#publication').val(book.publication);
-    $('#sug-price').val(300);
+    // $('#sug-price').val(suggestedPrice);
 
 
     $('form input[type=text] + label').addClass('active');

@@ -59,7 +59,7 @@
 
     <div class="row center">
       <div class="input-field col s12">
-        <input id="mobile" type="text" required>
+        <input id="mobile" class="numeric" type="text" required>
         <label for="mobile" class="grey-text darken-3">Mobile</label>
       </div>
     </div>
@@ -71,11 +71,11 @@
         <div class="row">
           <div class="input-field col s12">
             <select class="grey-text darken-3 disabled" id="college">
-              <!-- <option value="" disabled selected>Select your College</option> -->
-              <option value="37">Vishwakarma Institute of Technology</option>
+              <option value="" disabled selected>Select your College</option>
               <option value="30">Cummins College of Engineering</option>
-              <option value="32">Maharashtra Institute of Technology</option>
               <option value="36">MIT College of Engineering</option>
+              <option value="32">Maharashtra Institute of Technology</option>
+              <option value="37">Vishwakarma Institute of Technology</option>
             </select>
           </div>
         </div>
@@ -147,12 +147,18 @@ $(document).ready(function() {
   if (college_id!=null && college_id!=undefined) {
     $('select#college').val( college_id );
   } 
+  
+  $('body').on('keypress', '.numeric', function(e){
+    if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) { return false; }
+  });
+
+
 
   $('body').on('click', '.go', function(e) {
     e.preventDefault();
-    var name        = $('#name').val();
-    var mobile      = $('#mobile').val();
-    var college_id  = $('select#college').val();
+    var name        = $('#name').val().trim();
+    var mobile      = $('#mobile').val().trim();
+    var college_id  = $('select#college').val().trim();
 
     console.log(name);
     console.log(mobile);

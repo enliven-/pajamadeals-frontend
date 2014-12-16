@@ -20,7 +20,7 @@ app.ListingView = Backbone.View.extend({
     else { image_url = 'http://backend.pajamadeals.in' + image_url; }
     console.log(image_url)
     that.model.set('image_url', image_url);
-    console.log(that.model.toJSON())
+    console.log(that.model.toJSON());
     $.get('/partials/listing.mst', function(template) {
       var rendered = Mustache.render(template, that.model.toJSON() );
       that.$el.html( rendered );

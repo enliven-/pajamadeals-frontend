@@ -211,19 +211,23 @@
             <br>
             <div class="row">
               <div class="input-field col s12">
-                <input name="mrp" id="mrp" type="text" autocomplete="off" required>
+                <input name="mrp" id="mrp" class="numeric" type="text" autocomplete="off" required>
                 <label for="mrp">MRP</label>
               </div>
             </div>
-            <div class="row">
+            <div class="row" style="margin-bottom: 0px">
               <div class="input-field col s6">
-                <input name="price" id="price" type="text" autocomplete="off" required>
+                <input name="price" class="numeric" id="price" type="text" autocomplete="off" required>
                 <label for="price">Price</label>
               </div>
               <div class="input-field col s6">
-                <input name="sug-price" id="sug-price"  class="disable" disabled="" type="text" required>
+                <input name="sug-price" id="sug-price"  class="numeric disable" disabled="" type="text" required value="-">
                 <label for="sug-price">Suggested Price</label>
               </div>
+            </div>
+            <div class="row center" style="margin-top: -10px">
+              <p class="info"><span style="text-decoration: superscript">*</span>
+              We charge you (seller) Rs 15 in cash, once your book is sold, for shipping and handling.</p>
             </div>
             <div class="row">
               <div class="input-field col s12">

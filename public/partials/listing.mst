@@ -7,15 +7,15 @@
     </div>
     <div style="padding-left: 10px; padding-bottom: 0px;" class="card-content col s9">
       <span style="font-size: 15px; font-weight: 500; color: gray;"class="title">{{ title }}</span> <br>
-      <span class="vol">{{ vol }}</span>
+      <span class="vol">{{ vol }}</span> <span class="edition">{{ edition }}</span>
       <span style="font-weight: 300; font-size: 13px;" class="authors">{{ authors }}</span> <br>
       <span style="font-weight: 200; font-size: 13px; font-style: italic;" class="publication">{{ publication }}</span> <br>
     </div>
   </div>
   <div class="row footer">
-    <div style="padding-left: 20px;" class="col s3">
+    <div style="?padding-left: 20px;" class="col s3">
       Rs <span style="text-decoration: line-through;" class="mrp"> {{ mrp }}</span><br>
-      <span style="color: red;" class="price">  Rs {{ price }}</span>
+      <span style="color: red;" class="price">  Rs {{ price }} + 15</span>
     </div>
     <div class="col s6">
       <span class="condition">{{ quality }} & </span> <br>
