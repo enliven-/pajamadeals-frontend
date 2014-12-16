@@ -10,6 +10,11 @@ $(document).ready(function() {
     window.location = window.location.origin;
   });
 
+  $('body').on('click', '.brand-logo', function(e) {
+    e.preventDefault();
+    window.location = window.location.origin;
+  });
+
   $('#listings').on('click', function(e) {
     console.log('listings!')
     app.router.trigger('route:home')
