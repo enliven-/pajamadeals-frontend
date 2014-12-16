@@ -86,7 +86,6 @@ app.ListingsView = Backbone.View.extend({
     delete data.mrp
     var listing   = new app.Listing(data);
     console.log(listing.toJSON())
-    // return false;
     setTimeout(function() { toast('Processing your listing', '3000'); }, 200);
     this.collection.create( listing.attributes, {
       success : function() { toast('Your listing has been created!', '3000'); $('#listings').click(); },
