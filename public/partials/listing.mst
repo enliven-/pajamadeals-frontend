@@ -13,7 +13,7 @@
     </div>
   </div>
   <div class="row footer">
-    <div style="?padding-left: 20px;" class="col s3">
+    <div style="padding-left: 10px;" class="col s3">
       Rs <span style="text-decoration: line-through;" class="mrp"> {{ mrp }}</span><br>
       <span style="color: red;" class="price">  Rs {{ price }}</span> <span class="charge"><span class="plus">+</span>20</span></span>
     </div>
