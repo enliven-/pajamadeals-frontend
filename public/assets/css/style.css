@@ -123,7 +123,8 @@ ul.tabs li.tab {
 
 nav .brand-logo {
 width: auto;
- margin-left: 80px; 
+ /*margin-left: 80px; */
+ margin-left: 20%;
 }
 
 /* ---------------  listing.mst ----------------- */
