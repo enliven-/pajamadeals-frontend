@@ -16,7 +16,7 @@ app.ListingView = Backbone.View.extend({
   render: function() {
     var that = this;
     var image_url = that.model.toJSON()['image']['thumb'];
-    image_url = 'http://backend.pajamadeals.in/' + image_url
+    image_url = 'http://backend.pajamadeals.in' + image_url
     console.log(image_url)
     that.model.set('image_url', image_url);
     console.log(that.model.toJSON())
@@ -28,6 +28,8 @@ app.ListingView = Backbone.View.extend({
   },
 
   placeOrder : function() {
+    var that = this;
+    var $self = this.$el;
     setTimeout(function(){ toast('Processing order.', '3000'); }, 200);
     var data  = {
                   listing_id : this.model.id,
@@ -46,6 +48,9 @@ app.ListingView = Backbone.View.extend({
                   Backbone.trigger('order:placed');
                   console.log(model);
                   console.log(response);
+                  $self.hide('slow', function(){ $self.remove(); });
+                  // $self.hide({duration: 'slow', direction: 'right', complete: function() {$self.remove();} });
+
                 },
       error   : function(m, r, o) {
                   toast('Error placing order.', '3000');
