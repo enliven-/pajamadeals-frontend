@@ -12,7 +12,13 @@ app.OrderView = Backbone.View.extend({
   render : function(options) {
     var template = $('#order-template').html();
     var listing  = this.model.toJSON().listing;
+    var image_url = listing.image.thumb;
+    if (image_url === null) { image_url = '/assets/images/images.png' }
+    else { image_url = 'http://backend.pajamadeals.in' + image_url; }
     var context = $.extend({}, listing,  this.model.toJSON());
+    context["image_url"] = image_url
+    console.log(context);
+    // return false;
     var rendered = Mustache.render(template, context);
     this.$el.html( rendered );
     if (context.status === 'cancelled') { this.$el.find('a').addClass('disabled'); }
