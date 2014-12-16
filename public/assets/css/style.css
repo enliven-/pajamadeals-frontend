@@ -131,7 +131,7 @@ width: auto;
 
 div.card > div.footer .buy {
   /*margin-left: 20px;*/
-  padding: 0 1rem;
+  padding: 0 1.2rem;
   font-size: 12px;
   height: 30px;
   line-height: 30px;
@@ -144,8 +144,16 @@ span.condition, span.markings {
   font-size: 12px;
 }
 
-span.price, span.mrp {
+span.mrp, span.charge {
+  font-size: 12px;
+}
+
+span.price {
   font-size: 13px;
+}
+
+.footer .plus {
+  padding: 2px;
 }
 
 /* ---------------  order.mst ----------------- */
@@ -167,7 +175,7 @@ form.listing input[type=radio] + label {
 
 form p.info {
   font-size: 12px;
-  color : lightgray;
+  color : #666;
 }
 
 
