@@ -20,7 +20,7 @@ input[type=text]:focus {
   width: 300px;
 }
 .order {
-  border-bottom: 1px solid gray;
+  /*border-bottom: 1px solid gray;*/
 }
 .input-field input[type=text]:valid {
   border-bottom: none;
@@ -130,6 +130,8 @@ width: auto;
 
 div.card > div.footer .buy {
   /*margin-left: 20px;*/
+  padding: 0 1.5rem;
+
 }
 
 span.condition, span.markings {
@@ -139,4 +141,6 @@ span.condition, span.markings {
 /* ---------------  order.mst ----------------- */
 div.order > div.card > div.footer a.cancel {
   margin-top: 10px;
+  margin-left: 10px;
+  padding: 0 1rem;
 }

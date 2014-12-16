@@ -17,7 +17,7 @@
       Rs <span style="text-decoration: line-through;" class="mrp"> {{ mrp }}</span><br>
       <span style="color: red;" class="price">  Rs {{ price }}</span>
     </div>
-    <div class="col s5">
+    <div class="col s6">
       <span class="condition">{{ quality }} & </span> <br>
       <span class="markings"> {{ markings }}</span> <br>
     </div>
