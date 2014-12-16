@@ -5,10 +5,10 @@
       <img style="height: 70px; width: 60px;" src="{{image_url}}">
 
     </div>
-    <div style="padding-left: 0px; padding-bottom: 0px;" class="card-content col s9">
-      <span style="font-size: 16px; font-weight: 500; color: gray;"class="title">{{ title }}</span> <br>
+    <div style="padding-left: 10px; padding-bottom: 0px;" class="card-content col s9">
+      <span style="font-size: 15px; font-weight: 500; color: gray;"class="title">{{ title }}</span> <br>
       <span class="vol">{{ vol }}</span>
-      <span style="font-weight: 300;" class="authors">{{ authors }}</span> <br>
+      <span style="font-weight: 300; font-size: 13px;" class="authors">{{ authors }}</span> <br>
       <span style="font-weight: 200; font-size: 13px; font-style: italic;" class="publication">{{ publication }}</span> <br>
     </div>
   </div>

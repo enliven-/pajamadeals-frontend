@@ -130,17 +130,30 @@ width: auto;
 
 div.card > div.footer .buy {
   /*margin-left: 20px;*/
-  padding: 0 1.5rem;
-
+  padding: 0 1rem;
+  font-size: 12px;
+  height: 30px;
+  line-height: 30px;
 }
 
 span.condition, span.markings {
-  color: grey;
+  color: #8d6e63;
+}
+.listing span.condition, .listing span.markings {
+  font-size: 12px;
+}
+
+span.price, span.mrp {
+  font-size: 13px;
 }
 
 /* ---------------  order.mst ----------------- */
 div.order > div.card > div.footer a.cancel {
   margin-top: 10px;
   margin-left: 10px;
-  padding: 0 1rem;
+  padding: 0 .7rem;
+  font-size: 12px;
+  height: 30px;
+  line-height: 30px;
 }
+
