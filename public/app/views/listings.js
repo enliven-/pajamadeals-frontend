@@ -83,7 +83,7 @@ app.ListingsView = Backbone.View.extend({
     delete data.authors
     delete data.publication
     delete data['sug-price']
-    delete data.mrp
+    // delete data.mrp
     var listing   = new app.Listing(data);
     console.log(listing.toJSON())
     // setTimeout(function() { toast('Processing your listing', '3000'); }, 200);
