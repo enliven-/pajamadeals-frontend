@@ -204,6 +204,13 @@ $(document).ready(function() {
     $('#title').removeAttr('disabled').focus();
   });
 
+  $('body').on('click', '.form-cancel', function(e) {
+    e.preventDefault();
+    clearForm();
+    $('#form-container .hide').addClass('hidden');
+    $('#title').removeAttr('disabled').focus();
+  });
+
   $('body').on('click', '#form-container .create', function(e) {
     e.preventDefault();
     console.log('yes!')
