@@ -30,7 +30,7 @@ app.ListingView = Backbone.View.extend({
   placeOrder : function() {
     var that = this;
     var $self = this.$el;
-    setTimeout(function(){ toast('Processing order.', '3000'); }, 200);
+    // setTimeout(function(){ toast('Processing order.', '3000'); }, 200);
     var data  = {
                   listing_id : this.model.id,
                   buyer_attributes :  { 

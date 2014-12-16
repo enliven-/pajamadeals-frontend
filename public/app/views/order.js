@@ -24,7 +24,7 @@ app.OrderView = Backbone.View.extend({
   cancelOrder : function() {
     var that = this;
     if (this.model.toJSON().status === 'cancelled') { return false; }
-    setTimeout(function() { toast('Cancelling order.', '3000'); }, 200);
+    // setTimeout(function() { toast('Cancelling order.', '3000'); }, 200);
     this.model.cancel({
       success : function() { $('#toast-container').remove(); toast('Order cancelled', '3000'); that.render(); },
       error   : function() { $('#toast-container').remove(); toast('Error cancelling order', '3000'); }
