@@ -16,6 +16,8 @@ app.ListingView = Backbone.View.extend({
   render: function() {
     var that = this;
     var image_url = that.model.toJSON()['image']['thumb'];
+    image_url = 'http://backend.pajamadeals.in/' + image_url
+    console.log(image_url)
     that.model.set('image_url', image_url);
     console.log(that.model.toJSON())
     $.get('/partials/listing.mst', function(template) {

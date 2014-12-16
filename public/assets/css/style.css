@@ -34,9 +34,9 @@ input[type=text]:focus {
 }
 
 .tabs-wrapper + .container {
-  margin: auto;
-  width: 95%;
-  padding: 0px;
+  /*margin: auto;*/
+  /*width: 95%;*/
+  /*padding: 0px;*/
 }
 
 .card {
@@ -54,8 +54,11 @@ input[type=text]:focus {
 input#search {
   margin-bottom: 0px;
   margin-left: 15px;
-  height: 3.5rem;
-  line-height: 1em;
+  /*height: 3.5rem;*/
+  /*line-height: 1em;*/
+  line-height: 64px;
+  margin-left: 10%;
+
 }
 input#search:focus {
   border-bottom: none;
@@ -113,6 +116,15 @@ span.heart {
   margin-top: 5px;
 }
 
+
+ul.tabs li.tab {
+ max-width: 33%; 
+}
+
+nav .brand-logo {
+width: auto;
+ margin-left: 80px; 
+}
 
 /* ---------------  listing.mst ----------------- */
 
