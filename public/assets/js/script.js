@@ -154,7 +154,7 @@ $(document).ready(function() {
   
   var calculateSuggestedPrice = function(mrp, condition, markings) {
     if (mrp > 0 && condition >=0 && markings >= 0) {
-      return Math.round( mrp*(60.0 - (3*condition) - (3*markings) )/100 )
+      return Math.round( mrp*(55.0 - (3.0*condition) - (3.0*markings) )/100 )
     } else {
       return '-'
     }

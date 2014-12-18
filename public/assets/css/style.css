@@ -144,8 +144,12 @@ span.condition, span.markings {
   font-size: 12px;
 }
 
-span.mrp, span.charge {
+span.mrp {
   font-size: 12px;
+}
+
+span.charge {
+  font-size: 11px;
 }
 
 span.price {
