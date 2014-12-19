@@ -15,7 +15,7 @@
   <div class="row footer">
     <div style="padding-left: 10px;" class="col s3">
       <span style="font-size:12px;">Rs</span><span style="text-decoration: line-through;" class="mrp"> {{ mrp }}</span><br>
-      <span style="color: red;" class="price">  Rs {{ price }}</span> <span class="charge"><span class="plus">+</span>20</span></span>
+      <span style="color: red;" class="price">  Rs {{ price }}</span> <span class="charge"><span class="plus">+</span>10</span></span>
     </div>
     <div class="col s6">
       <span class="condition">{{ quality }} & </span> <br>

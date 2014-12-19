@@ -27,12 +27,14 @@ app.ListingsView = Backbone.View.extend({
         error  : function(response) { toast('Error loading listings', '3000');  }
       });
     }
+    
+    this.listenTo(Backbone, 'listing:created', this.updateListings);
   },
   
   render : function(options) {
-
     var refreshFlag = options.refresh;
     var appendFlag  = options.append;
+    // var next        = options.next;
 
     var that = this;
     if (refreshFlag) {
@@ -40,7 +42,7 @@ app.ListingsView = Backbone.View.extend({
       this.collection.fetch({
         traditional   : true,
         data          : this.options,
-        success: function(response) { that.renderListings(appendFlag); },
+        success: function(response) { console.log('refreshing'); that.renderListings(appendFlag); },
         error  : function(response) { toast('Error loading listings', '3000');  }
       });
     } else {
@@ -58,6 +60,16 @@ app.ListingsView = Backbone.View.extend({
     }, this );
   },
 
+  updateListings : function() {
+    var that = this;
+    this.collection.fetch({
+      traditional   : true,
+      data          : this.options,
+      success: function(response) {  },
+      error  : function(response) { toast('Error loading listings', '3000'); }
+    });
+  },
+
   renderListing: function( item ) {
     var listingView = new app.ListingView({ model: item });
     $(this.target_sel).append( listingView.render().el );
@@ -73,22 +85,17 @@ app.ListingsView = Backbone.View.extend({
   },
 
   createListing : function() {
-    console.log('sssss')
     $('input.disable').removeAttr('disabled');
-    // hack!!
-    // var data      = this.$el.find('form.listing').serializeObject();
     var data = $('body').find('form.listing').serializeObject();
-    console.log(data);
     delete data.title
     delete data.authors
     delete data.publication
     delete data['sug-price']
-    // delete data.mrp
     var listing   = new app.Listing(data);
-    console.log(listing.toJSON())
     // setTimeout(function() { toast('Processing your listing', '3000'); }, 200);
+    var that = this;
     this.collection.create( listing.attributes, {
-      success : function() { toast('Your listing has been created!', '3000'); $('#listings').click(); },
+      success : function() { toast('Your listing has been created!', '3000'); $('body form .form-close').click(); $('#listings').click(); that.render({refresh: true, append: false}); },
       error   : function() { toast('Error creating listing', '3000'); }
     } );
     

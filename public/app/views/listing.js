@@ -18,9 +18,7 @@ app.ListingView = Backbone.View.extend({
     var image_url = that.model.toJSON()['image']['thumb'];
     if (image_url === null) { image_url = '/assets/images/images.png' }
     else { image_url = 'http://backend.pajamadeals.in' + image_url; }
-    console.log(image_url)
     that.model.set('image_url', image_url);
-    console.log(that.model.toJSON());
     $.get('/partials/listing.mst', function(template) {
       var rendered = Mustache.render(template, that.model.toJSON() );
       that.$el.html( rendered );
@@ -31,7 +29,7 @@ app.ListingView = Backbone.View.extend({
   placeOrder : function() {
     var that = this;
     var $self = this.$el;
-    // setTimeout(function(){ toast('Processing order.', '3000'); }, 200);
+    setTimeout(function(){ toast('Processing order.', '1000'); } 100);
     var data  = {
                   listing_id : this.model.id,
                   buyer_attributes :  { 
@@ -47,8 +45,6 @@ app.ListingView = Backbone.View.extend({
                   $('#toast-container').remove();
                   setTimeout(function() { toast('Order placed.', '3000'); }, 200);
                   Backbone.trigger('order:placed');
-                  console.log(model);
-                  console.log(response);
                   $self.hide('slow', function(){ $self.remove(); });
                   // $self.hide({duration: 'slow', direction: 'right', complete: function() {$self.remove();} });
 
