@@ -93,9 +93,15 @@ app.ListingsView = Backbone.View.extend({
     delete data['sug-price']
     var listing   = new app.Listing(data);
     // setTimeout(function() { toast('Processing your listing', '3000'); }, 200);
+    if (data.price.trim()==='') { toast('Error creating listing', '3000'); return false; }
     var that = this;
     this.collection.create( listing.attributes, {
-      success : function() { toast('Your listing has been created!', '3000'); $('body form .form-close').click(); $('#listings').click(); that.render({refresh: true, append: false}); },
+      success : function() { 
+                  toast('Your listing has been created!', '3000'); 
+                  $('body form .form-close').click(); 
+                  $('#listings').click(); 
+                  setTimeout(function() {  that.render({refresh: true, append: false}); }, 500);
+                },
       error   : function() { toast('Error creating listing', '3000'); }
     } );
     
