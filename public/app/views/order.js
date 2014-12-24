@@ -17,8 +17,6 @@ app.OrderView = Backbone.View.extend({
     else { image_url = 'http://backend.pajamadeals.in' + image_url; }
     var context = $.extend({}, listing,  this.model.toJSON());
     context["image_url"] = image_url
-    console.log(context);
-    // return false;
     var rendered = Mustache.render(template, context);
     this.$el.html( rendered );
     if (context.status === 'cancelled') { this.$el.find('a').addClass('disabled'); }

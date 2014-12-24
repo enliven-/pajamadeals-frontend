@@ -2,7 +2,7 @@
   display: none;
 }
 .card-image {
-  padding: 10px 5px 10px 5px;
+  /*padding: 10px 5px 10px 5px;*/
 }
 input, textarea {
   max-width:100%
@@ -128,9 +128,18 @@ width: auto;
 }
 
 /* ---------------  listing.mst ----------------- */
+div.footer {
+  padding-bottom: 10px;
+}
+div.footer > div.s6 {
+  padding-top: 20px;
+  /*padding-left: 40px;*/
+}
 
-div.card > div.footer .buy {
+div.card > div.footer .show {
   /*margin-left: 20px;*/
+  margin-top: 15px;
+  margin-bottom: 0px;
   padding: 0 1.2rem;
   font-size: 12px;
   height: 30px;
@@ -141,11 +150,11 @@ span.condition, span.markings {
   color: #8d6e63;
 }
 .listing span.condition, .listing span.markings {
-  font-size: 12px;
+  font-size: 13px;
 }
 
 span.mrp {
-  font-size: 12px;
+  font-size: 11px;
 }
 
 span.charge {
@@ -158,6 +167,30 @@ span.price {
 
 .footer .plus {
   padding: 2px;
+}
+
+/* ---------------  modal ----------------- */
+.modal .header {
+  padding-left: 10px;
+  margin-bottom: 0px;
+}
+
+.buy {
+  font-size: 12px;
+  padding: 0 1.2rem;
+}
+
+.modal .footer.row {
+  margin-bottom: 0px;
+}
+
+.modal .info {
+  font-size: 11px;
+  color: gray;
+}
+
+.modal {
+  padding-bottom: 5px;
 }
 
 /* ---------------  order.mst ----------------- */

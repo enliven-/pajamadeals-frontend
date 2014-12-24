@@ -258,4 +258,12 @@ $(document).ready(function() {
     app.listingsView.createListing();
   });
 
+  $('body').on('click', '.modal .buy', function(e) {
+    $("#lean_overlay").click();
+  });
+
+  $('body').on('click', '.modal .close', function(e) {
+    $("#lean_overlay").click();
+  });
+
 });

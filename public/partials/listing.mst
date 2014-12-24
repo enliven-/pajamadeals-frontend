@@ -6,10 +6,10 @@
 
     </div>
     <div style="padding-left: 10px; padding-bottom: 0px;" class="card-content col s9">
-      <span style="font-size: 15px; font-weight: 500; color: gray;"class="title">{{ title }}</span> <br>
+      <span style="font-size: 14px; font-weight: 500; color: gray;"class="title">{{ title }}</span> <br>
       <span class="vol">{{ vol }}</span> <span class="edition">{{ edition }}</span>
-      <span style="font-weight: 300; font-size: 13px;" class="authors">{{ authors }}</span> <br>
-      <span style="font-weight: 200; font-size: 13px; font-style: italic;" class="publication">{{ publication }}</span> <br>
+      <span style="font-weight: 300; font-size: 12px;" class="authors">{{ authors }}</span> <br>
+      <span style="font-weight: 200; font-size: 12px; font-style: italic;" class="publication">{{ publication }}</span> <br>
     </div>
   </div>
   <div class="row footer">
@@ -18,11 +18,47 @@
       <span style="color: red;" class="price">  Rs {{ price }}</span> <span class="charge"><span class="plus">+</span>10</span></span>
     </div>
     <div class="col s6">
-      <span class="condition">{{ quality }} & </span> <br>
-      <span class="markings"> {{ markings }}</span> <br>
+      <span class="condition">{{ quality  }} & </span>
+      <span class="markings"> {{ markings }} </span> <br>
     </div>
     <div class="col s3">
-      <a class="waves-effect waves-light btn white-text buy">Buy</a>
+      <a class="waves-effect waves-light btn white-text show modal-trigger" href="#modal-{{id}}">Show</a>
+    </div>
+  </div>
+</div>
+
+
+<div id="modal-{{id}}" class="modal">
+  <div class="row header">
+    <h5>{{ title }}</h5>
+  </div>
+  <div class="row">
+    <div class="card-image col s3">
+      <img style="height: 100px; width: 80px;" src="{{image_url}}">
+    </div>
+    <div class="col s8 offset-s1">
+      <span class="vol">{{ vol }}</span> <span class="edition">{{ edition }}</span>
+      <span style="font-weight: 300; font-size: 13px;" class="authors">{{ authors }}</span> <br>
+      <span style="font-weight: 200; font-size: 13px; font-style: italic;" class="publication">{{ publication }}</span> <br> <br>
+      <span style="font-weight: 200; font-size: 13px;">Condition: </span><span class="condition">{{ quality  }} </span> <br>
+      <span style="font-weight: 200; font-size: 13px;">Markings: </span><span class="markings"> {{ markings }} </span> <br>
+    </div>
+  </div>
+  <div class="row footer">
+    <div class="col s3">
+      <span style="font-size:12px;">Rs</span><span style="text-decoration: line-through;" class="mrp"> {{ mrp }}</span><br>
+      <span style="color: red;" class="price">  Rs {{ price }}</span> <span class="charge"><span class="plus">+</span>10</span></span>
+    </div>
+    <div class="col s8 offset-s1">
+      <span class="info">*One of our student ambassador will contact you shortly after you place your order to confirm it.</span>
+    </div>
+  </div>
+  <div class="row footer">
+    <div class="col s3">
+      <a class="waves-effect btn-flat close modal-close">Cancel</a>
+    </div>
+    <div class="col s3 offset-s6">
+      <a class="waves-effect waves-light btn white-text buy modal-close">Buy</a>
     </div>
   </div>
 </div>

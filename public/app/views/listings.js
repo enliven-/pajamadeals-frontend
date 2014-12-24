@@ -23,7 +23,7 @@ app.ListingsView = Backbone.View.extend({
       this.collection.fetch({
         traditional   : true,
         data          : this.options,
-        success: function(response) {  },
+        success: function(response) { },
         error  : function(response) { toast('Error loading listings', '3000');  }
       });
     }
@@ -58,6 +58,7 @@ app.ListingsView = Backbone.View.extend({
     this.collection.each(function(item) { 
       this.renderListing(item);
     }, this );
+    $('.modal-trigger').leanModal();
   },
 
   updateListings : function() {
@@ -87,13 +88,20 @@ app.ListingsView = Backbone.View.extend({
   createListing : function() {
     $('input.disable').removeAttr('disabled');
     var data = $('body').find('form.listing').serializeObject();
+    data.quality  = data.quality  || '';
+    data.markings = data.markings || '';
     delete data.title
     delete data.authors
     delete data.publication
-    delete data['sug-price']
+    delete data['sug-price'];
+
+    // validation
+    var flag = false;
+    var vals = _.values(data);
+    _.each(vals, function(v) { if (v==='') {flag = true; }  });
+    if (flag) { console.log(data); toast('Error creating listing', '3000'); return false; }
+
     var listing   = new app.Listing(data);
-    // setTimeout(function() { toast('Processing your listing', '3000'); }, 200);
-    if (data.price.trim()==='') { toast('Error creating listing', '3000'); return false; }
     var that = this;
     this.collection.create( listing.attributes, {
       success : function() { 

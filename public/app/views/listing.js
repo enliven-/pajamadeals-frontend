@@ -45,8 +45,8 @@ app.ListingView = Backbone.View.extend({
                   $('#toast-container').remove();
                   setTimeout(function() { toast('Order placed.', '3000'); }, 200);
                   Backbone.trigger('order:placed');
-                  $self.hide('slow', function(){ $self.remove(); });
-                  // $self.hide({duration: 'slow', direction: 'right', complete: function() {$self.remove();} });
+                  // $self.hide('slow', function(){ $self.remove(); });
+                  $self.hide({duration: 'slow', easing: 'linear', complete: function() {$self.remove();} });
 
                 },
       error   : function(m, r, o) {
