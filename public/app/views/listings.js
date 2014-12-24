@@ -58,7 +58,7 @@ app.ListingsView = Backbone.View.extend({
     this.collection.each(function(item) { 
       this.renderListing(item);
     }, this );
-    $('.modal-trigger').leanModal();
+    setTimeout(function() { console.log('effects loading!'); Waves.displayEffect(); $('.modal-trigger').leanModal(); }, 1000);
   },
 
   updateListings : function() {

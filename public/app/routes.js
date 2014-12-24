@@ -20,7 +20,7 @@ app.listingsView.render({refresh :  true});
 
 app.router
   .on('route:home', function() {
-    setTimeout(function() { console.log('effects loading!'); Waves.displayEffect(); $('.modal-trigger').leanModal(); }, 1500);
+    setTimeout(function() { console.log('effects loading!'); Waves.displayEffect(); $('.modal-trigger').leanModal(); }, 1000);
   })
 
   .on('route:new', function() {
