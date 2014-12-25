@@ -175,6 +175,10 @@ span.price {
   margin-bottom: 0px;
 }
 
+.modal .middle {
+  margin-bottom: 0px;
+}
+
 .buy {
   font-size: 12px;
   padding: 0 1.2rem;
